@@ -8,11 +8,6 @@
 			<a href="<?= $BASE_HREF_QUERY ?>">
 				<img class="header__logo" src="img/header/logo.svg" alt="logo">
 			</a>
-			<div class="header__buttons">
-				<button class="header__buttons-phone button" data-modal-button="modalbox" type="button">
-					<span>Связаться</span>
-				</button>
-			</div>
 		</div>
 
 	</div>
