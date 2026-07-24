@@ -1,0 +1,69 @@
+.teachers {
+
+  &__content {
+    @include wide;
+    border-radius: 20px;
+    padding: 32px 0 24px;
+  }
+
+  &__icon {
+    width: 40px;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+
+  &__nav-buttons {
+    margin-bottom: 30px;
+  }
+
+  &__slider {
+    padding: 10px 0;
+  }
+
+  &__item {
+    min-height: 180px;
+    border-radius: 12px;
+    padding: 12px;
+
+    &-role {
+      max-width: 91px;
+      font-size: 10px;
+    }
+
+    &-name {
+      padding-right: 25px;
+      font-size: 16px;
+    }
+
+    &-photo {
+    }
+
+    &-button {
+      width: 20px;
+      height: 20px;
+      bottom: 12px;
+      right: 12px;
+
+      &::after {
+        width: 8px;
+        height: 8px;
+      }
+    }
+
+    &.swiper-slide-active {
+      transform: scale(1.1);
+      margin: 0 15px !important;
+    }
+  }
+
+  &__button {
+    font-size: 18px;
+    border-width: 1px;
+    margin: 20px auto 0;
+    padding: 10px 16px;
+  }
+}

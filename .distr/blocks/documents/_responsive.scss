@@ -1,0 +1,95 @@
+.documents {
+	max-width: none;
+	display: block;
+	border-radius: 16px;
+	padding: 0;
+	margin-block: 64px 32px;
+
+
+	&__header {
+		min-height: 400px;
+		border-radius: 16px;
+		background-image: url('../img/documents/bg_m.jpg');
+		padding: 18px 12px 12px;
+	}
+
+
+	&__title {
+		max-width: none;
+		font-size: 32px;
+	}
+
+
+	&__text {
+		max-width: none;
+		font-size: 18px;
+		letter-spacing: -0.01em;
+	}
+
+
+	&__cards {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
+
+
+	&__card {
+		min-height: 100px;
+		gap: 30px;
+		border-radius: 12px;
+		padding: 12px;
+
+		&-header {
+			align-self: stretch;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		&-title {
+			font-size: 18px;
+			margin-bottom: 6px;
+		}
+
+		&-text {
+			max-width: none;
+			font-size: 14px;
+			font-weight: 400;
+			letter-spacing: 0.01em;
+		}
+
+		&-image {
+			max-width: 46px;
+		}
+
+		&-icon {
+			width: 30px;
+			height: 30px;
+			font-size: 30px;
+		}
+	} // &__card
+
+
+	&__form {
+		padding: 20px 12px;
+	}
+
+	.form__txt {
+		display: none;
+	}
+
+
+	.version-bastaschoolcom & {
+		&__header {
+			background-image: url('../img/documents/bg_2_m.jpg');
+		}
+
+		&__card {
+			&-image {
+				max-width: 77px;
+			}
+		} // &__card
+	} // .version-bastaschoolcom &
+
+}

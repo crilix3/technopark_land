@@ -1,0 +1,62 @@
+.fw-light { font-weight: 300; }
+.fw-normal { font-weight: normal; }
+.fw-medium { font-weight: 500; }
+.fw-sbold { font-weight: 600; }
+.fw-bold { font-weight: bold; }
+.fw-xbold { font-weight: 800; }
+.fw-black { font-weight: 900; }
+
+.text-gradient {
+	@include text-gradient;
+}
+
+.hide-scrollbar {
+	@include hide-scrollbar;
+}
+
+.hidden {
+	@include hidden;
+}
+
+@include desktop() {
+	.d-mobile { display: none !important; }
+}
+
+.link  {
+	&-hover { @include link-hover; }
+	&-unhover { @include link-unhover; }
+} // .link
+
+
+.h2 {
+	text-align: center;
+	font-size: 80px;
+	font-weight: 900;
+	line-height: 1;
+	letter-spacing: -0.02em;
+	text-transform: uppercase;
+}
+
+.h3 {
+	font-size: 60px;
+	font-weight: 900;
+	line-height: 1;
+	letter-spacing: -0.01em;
+	text-transform: uppercase;
+}
+
+
+/* Lists */
+.list {
+	&-dashed {
+		@include list-dashed;
+	}
+
+	&-dotted {
+		@include list-dotted;
+	}
+
+	&-squared {
+		@include list-squared;
+	}
+}

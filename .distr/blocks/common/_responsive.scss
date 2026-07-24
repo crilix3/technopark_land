@@ -1,0 +1,80 @@
+@import '_variables-css.responsive';
+
+
+// Layout
+
+body {
+  font-size: 16px;
+}
+
+body:not(.page-main):not(.page-thanks) .wrapper {
+  padding-top: calc(var(--header-height) + 10px);
+}
+
+body.page-thanks .wrapper {
+  padding-top: calc(var(--header-thanks-height) + 10px);
+}
+
+.container {
+	max-width: none;
+}
+
+// Common
+
+// Section
+
+section {
+  padding: 30px 0;
+}
+
+// Title -----------------
+
+.title {
+  font-size: 36px;
+  margin-bottom: 30px;
+
+  &:after {
+    height: 1px;
+    bottom: -6px;
+  }
+}
+
+
+// Swiper-buttons --------
+
+.swiper-button {
+  width: 70px !important;
+  height: 36px !important;
+  padding: 2px;
+
+  &-next,
+  &-prev {
+    width: 30px;
+    height: 30px;
+    background-size: 16px 16px;
+  }
+}
+
+// Swiper Scrollbar ------------
+
+.swiper-scrollbar {
+  height: 5px;
+  margin-top: 20px;
+}
+
+// Pagination ------------
+
+.swiper-pagination {
+  gap: 6px;
+  margin-top: 6px;
+
+  &-bullet {
+    width: 70px;
+    height: 2px;
+  }
+}
+
+/***********/
+/* Common */
+
+@import '_utils.responsive';

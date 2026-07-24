@@ -1,0 +1,103 @@
+.presentation {
+	max-width: 1848px;
+	border-radius: 24px 36px;
+	background: linear-gradient(279.8deg, #E9EAEB -8.34%, #ECEDF0 100.9%);
+	padding: 0;
+	margin-bottom: 126px;
+
+
+	&__top {
+		display: grid;
+		grid-template-columns: 4.5fr 7.5fr;
+		border-radius: 24px;
+		background: white;
+		padding: 23px 32px 32px 49px;
+	}
+
+
+	&__header {
+		display: flex;
+		flex-direction: column;
+		padding-top: 16px;
+	}
+
+
+	&__title {
+		margin-bottom: auto;
+	}
+
+
+	&__text {
+		font-size: 22px;
+		font-weight: 500;
+		line-height: 1;
+		letter-spacing: -0.01em;
+	}
+
+
+	&__cards {
+		display: flex;
+		gap: 30px;
+	}
+
+
+	&__card {
+		flex-basis: 100%;
+		min-height: 389px;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		color: white;
+		border-radius: 24px;
+		background: #F5F5F6 url('../img/presentation/bg-card_d.svg') no-repeat 0 0 / cover;
+		padding: 24px;
+
+		&-num {
+			width: 20px;
+			height: 20px;
+			text-align: center;
+			align-content: center;
+			font-size: 13px;
+			font-weight: 900;
+			line-height: 1.24;
+			letter-spacing: -0.02em;
+			border: 2.5px solid;
+			border-radius: 99px;
+			padding-top: 0.8px;
+			margin-bottom: auto;
+		}
+
+		&-title {
+			font-size: 30px;
+			font-weight: 500;
+			line-height: 1;
+			letter-spacing: -0.02em;
+		}
+
+		&-text {
+			font-size: 22px;
+			line-height: 1;
+			letter-spacing: -0.01em;
+		}
+	} // &__card
+
+
+	&__form {
+		padding: 38px 20px 20px;
+
+		.button {
+			justify-content: space-between;
+			background: #1C1C1C;
+			box-shadow: 0px 4px 4px rgba(120, 120, 120, 0.25);
+		}
+
+		.button__icon {
+			order: 2;
+			width: 40px;
+			height: 40px;
+			font-size: 40px;
+			margin-right: -8px;
+		}
+	} // &__form
+
+}

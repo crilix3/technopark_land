@@ -1,0 +1,20 @@
+.d-desktop { display: none !important; }
+
+
+.h2 {
+	font-size: 32px;
+	letter-spacing: -0.03em;
+}
+
+.h3 {
+	font-size: 22px;
+	font-weight: 850;
+}
+
+
+/* Lists */
+.list {
+	&-squared {
+		@include list-squared;
+	}
+}

@@ -1,0 +1,90 @@
+.thanks {
+	max-width: none;
+	border-radius: 16px;
+	background: white;
+	padding: 0;
+	margin-block: 38px 64px;
+
+
+	&__top {
+		display: block;
+		border-radius: 0;
+		background: none;
+
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 14px 12px;
+	}
+
+
+	&__header {
+        display: contents;
+		padding: 0;
+	}
+
+
+	&__title {
+		font-size: 32px;
+	}
+
+    &__subtitle {
+        font-size: 18px;
+        max-width: 100%;
+        margin-bottom: 22px;
+    }
+
+	&__text {
+        font-size: 18px;
+        margin-bottom: 0;
+	}
+
+    &__button {
+        max-width: 100%;
+        min-height: 48px;
+        font-size: 16px;
+        padding-inline: 20px;
+        order: 2;
+    }
+
+	&__cards {
+		flex-direction: column;
+		gap: 8px;
+        margin-bottom: 4px;
+	}
+
+
+	&__card {
+		flex-basis: auto;
+		min-height: 88px;
+		display: grid;
+		grid-template-columns: 1fr auto;
+		align-items: center;
+		gap: 20px;
+		border-radius: 16px;
+		background-image: url('../img/@thanks/thanks/bg-card_m.svg');
+		padding: 11px 12px;
+
+		&-num {
+			grid-column: 2;
+			grid-row: span 3;
+			width: 18px;
+			height: 18px;
+			font-size: 10px;
+			border-width: 2.5px;
+			padding-top: 1.4px;
+			margin: 0 0 0 auto;
+		}
+
+		&-title {
+			font-size: 16px;
+			letter-spacing: -0.01em;
+		}
+
+		&-text {
+			font-size: 12px;
+			line-height: 1.1;
+		}
+	} // &__card
+
+}

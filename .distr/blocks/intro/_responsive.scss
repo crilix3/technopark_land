@@ -1,0 +1,55 @@
+.intro {
+
+  &__slider {
+
+    &-content {
+      height: 275px;
+    }
+  }
+
+  &__item {
+    height: 210px;
+    border-radius: 16px;
+    padding: 12px;
+
+    &-num {
+      font-size: 10px;
+      width: 20px;
+      height: 20px;
+      border-width: 2px;
+      padding-top: 2px;
+    }
+
+    &-title {
+      font-size: 16px;
+    }
+
+    &-img {
+      top: 12px;
+      right: 12px;
+      width: 60px;
+      height: 60px;
+      border-radius: 10px;
+    }
+
+    &.swiper-slide-active {
+      height: 275px;
+    }
+
+    &.swiper-slide-active & {
+
+      &-title {
+        font-size: 18px;
+      }
+
+      &-txt {
+        font-size: 14px;
+        margin-top: 8px;
+      }
+    }
+  }
+
+  &__nav-buttons {
+    margin: 20px auto 0;
+  }
+}

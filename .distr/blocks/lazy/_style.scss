@@ -1,0 +1,15 @@
+.lazy {
+	background-image: none !important;
+	opacity: 0;
+
+	&:before,
+	&:after {
+		content: none !important;
+	}
+
+	&-loaded {
+		opacity: 1;
+		transition: 0.1s;
+	}
+
+}

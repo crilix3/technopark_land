@@ -1,0 +1,114 @@
+.documents {
+	max-width: 1840px;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 55px 20px;
+	border-radius: 36px;
+	background: linear-gradient(279.8deg, #E9EAEB -8.34%, #ECEDF0 100.9%);
+	padding: 24px;
+	margin-block: 70px;
+
+
+	&__header {
+		display: flex;
+		flex-direction: column;
+		border-radius: 24px;
+		background: white url('../img/documents/bg_d.jpg') no-repeat 100% 0 / cover;
+		padding: 24px 20px;
+	}
+
+
+	&__title {
+		max-width: 474px;
+		margin-bottom: auto;
+	}
+
+
+	&__text {
+		max-width: 422px;
+		font-size: 24px;
+		font-weight: 500;
+		line-height: 1;
+		letter-spacing: -0.02em;
+	}
+
+
+	&__cards {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+	}
+
+
+	&__card {
+		min-height: 132px;
+		display: flex;
+		align-items: center;
+		gap: 30px;
+		border-radius: 24px;
+		background: white;
+		padding: 24px;
+
+		&-title {
+			font-size: 30px;
+			font-weight: 500;
+			line-height: 1;
+			letter-spacing: -0.02em;
+			margin-bottom: 12px;
+		}
+
+		&-text {
+			max-width: 677px;
+			font-size: 18px;
+			font-weight: 500;
+			line-height: 1.1;
+			letter-spacing: -0.01em;
+		}
+
+		&-image {
+			max-width: 70px;
+			position: relative;
+			flex: 1 0 auto;
+			margin-left: auto;
+
+			&-emblem {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				inset: 0;
+			}
+		} // &-image
+
+		&-icon {
+			width: 40px;
+			height: 40px;
+			font-size: 40px;
+			border-radius: 99px;
+			background: var(--gray20);
+			margin-left: auto;
+		}
+	} // &__card
+
+
+	&__form {
+		grid-column: span 2;
+	}
+
+	.form__title b {
+		font-weight: 700;
+	}
+
+
+	.version-bastaschoolcom & {
+		&__header {
+			background-image: url('../img/documents/bg_2_d.jpg');
+		}
+
+		&__card {
+			&-image {
+				max-width: 142px;
+			}
+		} // &__card
+	} // .version-bastaschoolcom &
+
+}
