@@ -1,0 +1,96 @@
+.modalbox {
+
+	&__close {
+		width: 30px;
+		height: 30px;
+		right: initial;
+		left: 50%;
+		transform: translateX(-50%);
+		top: -45px;
+		border-radius: 99px;
+		overflow: hidden;
+	}
+
+	&__window {
+		width: calc(100% - 5vw);
+		border-radius: 16px;
+		position: relative;
+		top: 5%;
+		padding: 24px 12px;
+	}
+
+	.form {
+		width: 100%;
+		border-radius: 16px;
+
+		&__title {
+			font-size: 24px;
+			line-height: 120%;
+		}
+
+		&__item {
+
+			&_button {
+				margin-top: 10px;
+
+				button {
+					font-size: 15px;
+				}
+			}
+		}
+
+		&__footer {
+
+			&-text {
+				font-size: 10px;
+
+				a,
+				a:hover {
+					font-size: 10px;
+				}
+			}
+		}
+	}
+
+	&_thanks {
+
+		.modalbox {
+
+			&__window {
+				width: 100%;
+				height: fit-content;
+				bottom: 0;
+				border-radius: 12px 12px 0 0;
+			}
+		}
+
+		.thanks {
+
+			&__img {
+				height: 210px;
+				// background-image: url('../img/modal/thanks-mb.jpg');
+				border-radius: 12px 12px 0 0;
+			}
+
+			&__info {
+				border-radius: 12px;
+				margin-top: -12px;
+				padding: 20px 12px;
+
+				&-title {
+					font-size: 24px;
+					margin-bottom: 24px;
+				}
+
+				&-button {
+					width: 100%;
+					padding: 14px 0;
+				}
+			}
+		}
+	}
+
+}
+
+
+@import 'modalbox-open-day/_responsive';

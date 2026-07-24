@@ -1,0 +1,140 @@
+.about {
+
+  &__content {
+    @include wide;
+    gap: 12px;
+    border-radius: 36px;
+    padding: 16px 14px;
+  }
+
+  &__title {
+    font-size: 32px;
+    text-align: initial;
+
+    span {
+      padding-left: 30px;
+
+      &::before {
+        width: 24px;
+        height: 24px;
+        top: 1px;
+      }
+    }
+  }
+
+  &__txt_mb {
+    display: block;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -.01em;
+    span { color: $red }
+  }
+
+  &__video {
+    background-image: url('../img/about/preview-mb.jpg');
+    width: 100%;
+    min-height: 475px;
+    display: grid;
+    grid-template-columns: initial;
+    align-content: end;
+    border-radius: 16px;
+    padding: 12px;
+
+    &-bg {display: none;}
+
+    &-label {
+      display: none;
+    }
+
+    &-success {
+      @include sliderOffset;
+      max-width: none;
+      height: initial;
+
+      &-item {
+        min-height: 155px;
+        border-radius: 10px;
+        padding: 12px;
+
+        &-rating {
+          font-size: 14px;
+          padding: 6px 12px 6px 8px;
+
+          span {
+            padding-left: 16px;
+
+            &::before {
+              width: 12px;
+              height: 12px;
+              top: -1px;
+            }
+          }
+        }
+
+        &-title {
+          font-size: 16px;
+          max-width: initial;
+        }
+
+        &-txt {
+          font-size: 14px;
+          color: $gray80;
+        }
+      }
+    }
+
+    &-play {
+      left: 50%;
+      top: 200px;
+      bottom: initial;
+      transform: translate(-50%, 0);
+      gap: 12px;
+
+      a {
+        width: 40px;
+        height: 40px;
+        border-width: 1px;
+
+        img {
+          width: 20px;
+          height: 20px;
+          left: 2px;
+        }
+      }
+
+      div {
+        font-size: 12px;
+        border-width: 1px;
+        padding: 12px 16px;
+      }
+    }
+  }
+
+  &__stat {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+
+    &-item {
+      min-height: 100px;
+      border-radius: 16px;
+      padding: 12px;
+
+      &-val {
+        font-size: 20px;
+      }
+
+      &-txt {
+        font-size: 14px;
+      }
+
+      &::after {
+        width: 28px;
+        height: 28px;
+        right: 12px;
+        top: 12px;
+      }
+    }
+  }
+
+}

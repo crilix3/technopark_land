@@ -1,92 +1,172 @@
-# first-lesson
-
-
-
-## Getting started
-
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
-
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
-
-## Add your files
-
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
-
-```
-cd existing_repo
-git remote add origin https://lab.syndev.ru/zielseiten/shkolabasty/first-lesson.git
-git branch -M master
-git push -uf origin master
+# Установка npm-модулей
+```bash
+npm install
 ```
 
-## Integrate with your tools
+# Настройка проекта
+В `gulpfile.js` в конфиг вынесены основные параметры:
+```js
+var CONFIG = {
+	output: 'public', /* Корневая папка сайта */
+	input: '.distr/', /* Корневая папка дистрибутива */
+	pages: '.distr/pages', /* Структура сайта в дистрибутиве */
+	templates: '.distr/templates', /* Шаблоны сайта в дистрибутиве */
+	blocks: '.distr/blocks', /* Блоки сайта в дистрибутиве */
+	proxyPortPhp: 8002, /* Прокси-порт для PHP-сервера */
+	proxyPortBs: 8910, /* Прокси-порт для browserSync */
+	useAutoprefixer: false, /* Autoprefixer по умолчанию выключен */
+	reload: true /* Перезагрузка браузера по умолчанию влючена */
+}
+```
 
-- [ ] [Set up project integrations](https://lab.syndev.ru/zielseiten/shkolabasty/first-lesson/-/settings/integrations)
+Для переопределения настроек можно использовать свой файл `gulpconfig.json` (в корне проекта), например, если какой-то порт уже занят или нескольких проектов должны быть запущены параллельно:
+```js
+{
+	"proxyPortPhp": 8003,
+	"proxyPortBs": 8911
+}
+```
 
-## Collaborate with your team
+# Сборка проекта
+Для сборки проекта в `gulpfile.js` есть две основные задачи:
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+1. `default` - сборка для dev (выполянется по умолчанию), без сжатия, с живой перезагрузкой в браузере (browserSync, порт :8910).
+```bash
+npm run gulp
+```
 
-## Test and Deploy
+2. `build` - просто сборка, без запуска browserSync.
+```bash
+npm run gulp build
+```
+или со сжатием, для production (в случае использования докера)
+```bash
+NODE_ENV=production npm run gulp build
+```
 
-Use the built-in continuous integration in GitLab.
+Также есть есть две дополнительные задачи:
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+1. `nosync` - сборка для dev без поднятия PHP-сервера и browserSync.
+```bash
+npm run gulp nosync
+```
 
-***
+2. `noreload` - сборка без перезагрузки страницы (когда не нужно, чтобы после изменений фокус каждый раз прыгал к самому началу страницы).
+```bash
+npm run gulp noreload
+```
 
-# Editing this README
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
+## Структура проекта
+`pages` - структура сайта (версии, подпапки, index.php, version.php и т.д.). Копируется 1-в-1 в папку `public`, с предварительным парсингом шаблонов.<br>
+Здесь также находятся:<br>
+- папки `css` с главными `*.scss`-файлами проекта с @import-ами стилей всех нужных блоков и шрифтами
+- папки `js` с главными `*.js`-файлами проекта с require-ми скриптов всех нужных блоков (используется синтаксис плагина [gulp-include](https://www.npmjs.com/package/gulp-include#include-directives))
 
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+`templates` - шаблоны страниц с инклюдами блоков. В качестве шаблонизатора используется [Nunjucks](https://mozilla.github.io/nunjucks/templating.html) ([Примеры](https://css-tricks.com/killer-features-of-nunjucks/))
 
-## Name
-Choose a self-explaining name for your project.
+`blocks` - блоки шаблонов
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+Блок - это не обязательно HTML-блок. Можно заводить логические блоки, например, `common`, `icon`, `fonts` и т.д. Каждый блок и его подключаемые файлы должны находиться в отдельной папке.
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+В папке блока может находиться:
+* `block.php`- [шаблон блока](http://prntscr.com/ki23p8)
+* `macro.php`- [макросы блока](http://prntscr.com/ki22y8)
+* `data.php`- [данные блока](http://prntscr.com/ki242n)
+* `img` - папка для изображений блока (внутри возможна любая вложенность)
+* `_style.scss` - основные стили блока.  В качестве шаблонизатора используется [SCSS](https://sass-scss.ru/documentation/rasshirenie_css/) ([Статья на русском с примерами](https://habr.com/post/96417/), [Песочница-компилятор](https://www.sassmeister.com), [Примеры с БЭМ](https://www.sassmeister.com/gist/be4b839c6d3ffb59a9868718cf81de55))
+* `_responsive.scss` - адаптивные стили блока
+* `common.js` - скрипты блока
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+Во всех php-файлах также используется Nunjucks.<br>
+Внутри `blocks` и `img` возможна любая вложенность.<br>
+Для групировки блоков для других страниц рекомендуется использовать префикс `@` с именем страницы, например, если в структуре есть папка `version1`, блоки можно сложить в папку `@version1`.
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+## Логика сборки
+### HTML
+1. Сборщик пропускает php-файлы в папке `.distr/pages` через шаблонизатор Nunjucks.
+1. Когда встречается упоминание `extends`, включается обработка шаблона из папки `templates`.
+1. В шаблоне при нахождении `include` парсится шаблон блока из указанной папки.
+1. В папку `public` копируются скомпилированные php-файлы из папки `.distr/pages`.
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+### Стили
+1. Сборщик пропускает scss-файлы из папок `.distr/pages/*/css` через шаблонизатор SCSS.
+1. Файлы с подчёркиванием '_', указанные с помощью `@import`, инклюдятся и компилируются. Файлы без подчёркивания компилируются автоматически в алфавитном порядке.
+1. В `public/*/css` копируются скомпилированные css-файлы.
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+### Изображения
+* В папку `public/img/*` копируются файлы из папок `.distr/blocks/*/img` (изображения блока копируются в папку блока).
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+### Скрипты
+1. Сборщик пропускает js-файлы из папок `.distr/pages/*/js` через плагин `gulp-include`.
+1. В `public/*/js` копируются скомпилированные js-файлы.
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+### Другие файлы
+* Все остальные файлы из папки `.distr/pages` копируются в `public` в соответствии со своей структурой.
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+## Описание формата файла .helm/values.yaml для задания редиректов и зеркал. 
+В примерах mdomain.com - основной домен, заданный в переменной PRODUCTION_URL проекта
+### Редиректы
+* Редирект https://domain2.com/lp/test -> https://mdomain.com
+```yaml
+redirects:
+  - host: domain2.com
+    path: /lp/test
+```
+* Редирект https://domain1.com -> https://mdomain.com/?lang=ru
+```yaml
+redirects:
+  - host: domain1.com
+    path: /
+    query: lang=ru
+```
 
-## License
-For open source projects, say how it is licensed.
+### Зеркала
+* Зеркало https://domain1.com/lp -> https://mdomain.com/?version=ru
+```yaml
+mirrors:
+  - host: domain1.com
+    path: /lp
+    query: version=ru
+```
+* Зеркало https://domain1.com -> https://mdomain.com/sicily/?version=greece
+```yaml
+mirrors:
+  - host: domain1.com
+    path: /
+    query: version=greece
+    subdir: /sicily
+```
+* Зеркало https://domain2.com/lp/test -> https://mdomain.com/ и редирект https://domain2.com/lp/redir2 -> https://domain2.com/lp/test
+```yaml
+mirrors:
+  - host: domain2.com
+    path: /lp/test
+    redirect:
+      - host: domain2.com
+        path: /lp/redir2
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+```
+
+
+### Разное
+* Блокировка сайта по коду страны (Код страны смотреть тут - https://www.geonames.org/countries/)
+```yaml
+block_code: "404"
+block_countries:
+  - desc: ОАЭ
+    code: AE
+  - desc: Саудовская Аравия
+    code: SA
+```
+
+* Добавление страницы ошибок
+```yaml
+error_pages:
+ - code: "404"
+   page: /404/index.php
+ - code: "500 502 503 504"
+   page: /50x/index.php
+```

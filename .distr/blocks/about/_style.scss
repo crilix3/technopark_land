@@ -1,0 +1,236 @@
+.about {
+
+  &__content {
+    background: #EAEBED;
+    display: grid;
+    gap: 20px;
+    border-radius: 36px;
+    padding: 48px 24px 24px;
+  }
+
+  &__title {
+    font-size: 80px;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -.02em;
+    text-transform: uppercase;
+    text-align: center;
+
+    span {
+      position: relative;
+      padding-left: 80px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        background: url('../img/about/logo-rune.svg') no-repeat center / cover;
+        width: 68px;
+        height: 68px;
+        left: 0;
+        top: -2px;
+      }
+    }
+  }
+
+  &__txt_mb {
+    display: none;
+  }
+
+  &__video {
+    width: 100%;
+    min-height: 702px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: url('../img/about/preview.jpg') no-repeat center / cover;
+    border-radius: 24px;
+    padding: 20px 20px 0;
+
+    &-bg {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-radius: 24px;
+      overflow: hidden;
+
+      &:after {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          content: '';
+          background: rgba(34, 34, 34, .45);
+      }
+
+      &-video {
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+      }
+  }
+
+
+    &-label {
+      position: relative;
+      max-width: 548px;
+      font-size: 40px;
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: -.02em;
+      color: white;
+      span { color: $red }
+    }
+
+    &-success {
+      max-width: 548px;
+      height: 530px;
+      margin: auto 0 0;
+
+      &-item {
+        background: rgba(0, 0, 0, 0.6);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        border-radius: 24px;
+        padding: 20px 24px;
+
+        &-rating {
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 0.9;
+          color: white;
+          background: $red;
+          border-radius: 999px;
+          padding: 8px 18px 8px 14px;
+
+          span {
+            display: inline-block;
+            position: relative;
+            padding-left: 22px;
+
+            &::before {
+              content: '';
+              position: absolute;
+              background: url('../img/about/icon-arrow.svg') no-repeat center / cover;
+              width: 16px;
+              height: 16px;
+              left: 0;
+              top: 0;
+            }
+          }
+        }
+
+        &-title {
+          font-size: 24px;
+          font-weight: 500;
+          line-height: 1;
+          letter-spacing: -.02em;
+          color: white;
+          max-width: 310px;
+        }
+
+        &-txt {
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 1.2;
+          color: $gray80;
+        }
+      }
+    }
+
+    &-play {
+      position: absolute;
+      width: 100%;
+      left: 50%;
+      bottom: 80px;
+      transform: translate(-50%, 0);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+
+      a {
+        background: rgba(0, 0, 0, 0.41);
+        width: 64px;
+        height: 64px;
+        display: grid;
+        place-items: center;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 999px;
+
+        img {
+          width: 34px;
+          height: 38px;
+          position: relative;
+          left: 2px;
+        }
+      }
+
+      div {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 0.8;
+        color: white;
+        background: rgba(0, 0, 0, 0.41);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 999px;
+        padding: 14px 20px;
+      }
+    }
+  }
+
+  &__stat {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+
+    &-item {
+      background: white;
+      min-height: 130px;
+      display: grid;
+      align-content: space-between;
+      position: relative;
+      border-radius: 24px;
+      padding: 20px 16px;
+
+      &-val {
+        font-size: 40px;
+        font-weight: 500;
+        line-height: 1;
+      }
+
+      &-txt {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1.1;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        background: center/cover no-repeat;
+        width: 40px;
+        height: 40px;
+        right: 16px;
+        top: 20px;
+      }
+
+      &:nth-of-type(1) { &::after { background-image: url('../img/about/icon-1.svg') }}
+      &:nth-of-type(2) { &::after { background-image: url('../img/about/icon-2.svg') }}
+      &:nth-of-type(3) { &::after { background-image: url('../img/about/icon-3.svg') }}
+      &:nth-of-type(4) { &::after { background-image: url('../img/about/icon-4.svg') }}
+    }
+  }
+
+  
+}

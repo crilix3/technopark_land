@@ -1,0 +1,163 @@
+.programs {
+
+	.container {}
+
+	&__title {
+		font-size: 32px;
+		text-align: center;
+		margin-bottom: 30px;
+
+		>span {
+			span {
+				font-size: 14px;
+				right: -30px;
+			}
+		}
+	}
+
+	&__filter {
+		gap: 4px;
+		@include sliderOffset;
+		margin-bottom: 20px;
+		overflow-x: auto;
+		-ms-overflow-style: none;
+		-webkit-overflow-scrolling: touch;
+		scrollbar-width: none;
+		scrollbar-color: transparent transparent;
+
+		&::-webkit-scrollbar {
+			display: none
+		}
+
+		&-button {
+			font-size: 14px;
+			flex-shrink: 0;
+			border-width: 1px;
+			padding: 10px 12px;
+
+			&[data-filter*="Высшее образование"],
+			&[data-filter*="Колледж"],
+			&[data-filter*="Курсы"],
+			&[data-filter*="Для детей"] {
+				padding-right: 38px;
+
+				&::before {
+					width: 24px;
+					height: 24px;
+					right: 6px;
+				}
+			}
+		}
+	}
+
+	&__content {
+		grid-template-columns: initial;
+		gap: 10px;
+	}
+
+	&__item {
+		min-height: 250px;
+		min-width: initial;
+		border-radius: 16px;
+
+		&[data-filter*="Высшее образование"],
+		&[data-filter*="Колледж"],
+		&[data-filter*="Курсы"],
+		&[data-filter*="Для детей"] {
+
+			&::before {
+				width: 24px;
+				height: 24px;
+				left: 12px;
+				top: 12px;
+			}
+		}
+
+		&-img {
+			height: 180px;
+			border-radius: 16px;
+
+			&:after {
+				border-radius: 16px;
+				background: rgba(17, 24, 32, 0.3);
+				backdrop-filter: blur(5px)
+			}
+		}
+
+		&-info {
+			gap: 12px;
+			padding: 12px;
+
+			&-title {
+				font-size: 24px;
+			}
+
+			&-category {
+				font-size: 14px;
+			}
+		}
+
+		&-button {
+			font-size: 16px;
+			padding: 12px 24px;
+			top: 70px;
+		}
+
+		&:hover & {
+
+			&-button {
+				top: 80px;
+			}
+		}
+
+		&--special {
+			background-image: url('../img/programs/bg-special_m.jpg');
+			min-height: 200px;
+			justify-content: space-between;
+			padding: 12px;
+		}
+
+		&--special & {
+
+			&-date {
+				font-size: 14px;
+				backdrop-filter: blur(10px);
+				padding: 9px 16px;
+			}
+
+			&-title {
+				font-size: 18px;
+				max-width: 175px;
+				margin-top: initial;
+			}
+
+			&-buttonMore {
+				font-size: 14px;
+				margin-top: 12px;
+				padding: 12px 40px 12px 12px;
+
+				&::after {
+					width: 26px;
+					height: 26px;
+					right: 5px;
+				}
+			}
+		}
+	}
+
+	&__button {
+		gap: 5px;
+		height: 40px;
+		font-size: 18px;
+		border-width: 1px;
+		margin: 24px auto 0;
+		padding: 0 16px;
+	}
+
+	&__buttonLast {
+		font-weight: 500;
+		font-size: 20px;
+		border-radius: 8px;
+		padding: 7px 9px;
+	}
+}
