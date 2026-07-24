@@ -21,9 +21,12 @@
 
 			<div class="header__buttons">
 
-				<button class="buttonRegister" data-modal-button="modalbox" type="button">
-					<span>Записаться на пробник</span>
+				<button class="buttonRegister icons-arrow" data-modal-button="modalbox" type="button">
+					<span>Записаться на пробное занятие</span>
 				</button>
+					<button class="buttonRegister buttonRegister-mobile icons-arrow" data-modal-button="modalbox" type="button">
+						<span>Записаться на пробник</span>
+					</button>
 
 			</div>
 

@@ -74,9 +74,15 @@
 		gap: 8px;
 
 		.buttonRegister {
-			font-size: 12px;
-			font-weight: 500;
-			padding: 8px;
+			display: none;
+
+			&-mobile {
+				font-size: 12px;
+				font-weight: 500;
+				padding: 8px;
+				display: block;
+				padding-left: 4px;
+			}
 
 		}
 
