@@ -146,14 +146,12 @@
 		border: 1px solid black;
 		padding: 20px;
 		cursor: pointer;
-		transition-duration: 0.5s;
-		transition-property: color, background-color, box-shadow;
 		transition: all 0.3s ease;
 
 		&:hover {
-			background: white;
-			color: black;
-			border: 1px solid black;
+			background: $blackLight;
+			border: 1px solid $blackLight;
+			color: white;
 		}
 
 		&-icon {

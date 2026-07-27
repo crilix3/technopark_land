@@ -6,7 +6,7 @@
 			<div class="advantages__list">
 				<div class="advantages__item">
 					<div class="advantages__number">1</div>
-					<p class="advantages__text">20 музыкальных направлений</p>
+					<p class="advantages__text">20+ музыкальных направлений</p>
 				</div>
 
 				<div class="advantages__item">

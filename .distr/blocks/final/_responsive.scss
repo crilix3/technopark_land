@@ -1,3 +1,20 @@
 .final-cta {
-	display: none;
+	&__title {
+		font-size: 18px;
+		max-width: 100%;
+
+		br {
+			display: none;
+		}
+	}
+
+	&__button {
+		width: 100%;
+		font-size: 16px;
+
+		&::before {
+			width: 26px;
+			height: 26px;
+		}
+	}
 }

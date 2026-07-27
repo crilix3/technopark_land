@@ -2,8 +2,7 @@
 	<div class="container">
 		<div class="final-cta__wrapper">
 			<h2 class="final-cta__title">
-				Выберите направление, удобную дату и время<br>
-				и запишитесь на пробное занятие онлайн
+				Оставьте заявку на пробное занятие — куратор свяжется с вами, <br> поможет определиться с направлением и согласует удобную <br> дату и время
 			</h2>
 
 			<a href="#" class="final-cta__button" data-modal-button="modalbox">
