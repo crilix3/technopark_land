@@ -81,7 +81,14 @@
 				font-weight: 500;
 				padding: 8px;
 				display: block;
-				padding-left: 4px;
+
+				&::before {
+					font-size: 15px;
+				}
+
+				span {
+					padding-left: 6px;
+				}
 			}
 
 		}

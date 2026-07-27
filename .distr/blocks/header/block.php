@@ -21,10 +21,10 @@
 
 			<div class="header__buttons">
 
-				<button class="buttonRegister icons-arrow" data-modal-button="modalbox" type="button">
+				<button class="buttonRegister icons-arrow-black" data-modal-button="modalbox" type="button">
 					<span>Записаться на пробное занятие</span>
 				</button>
-					<button class="buttonRegister buttonRegister-mobile icons-arrow" data-modal-button="modalbox" type="button">
+					<button class="buttonRegister buttonRegister-mobile icons-arrow-black" data-modal-button="modalbox" type="button">
 						<span>Записаться на пробник</span>
 					</button>
 
@@ -80,12 +80,6 @@
 					<button class="header__menu-buttons-feedback button shadow" data-modal-button="modalbox" type="button">
 						Обратная связь
 					</button>
-					<?php if ( $block['vk-link'] ) { ?>
-					<a href="<?= $block['vk-link'] ?>" target="_blank"><img src="img/header/icon-vk.svg" alt="icon-vk"></a>
-					<?php } ?>
-					<?php if ( $block['tg-link'] ) { ?>
-					<a href="<?= $block['tg-link'] ?>" target="_blank"><img src="img/header/icon-tg.svg" alt="icon-tg"></a>
-					<?php } ?>
 				</div>
 			</div>
 		</div>

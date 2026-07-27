@@ -9,18 +9,6 @@
 		background-repeat: no-repeat;
 		background-position: center;
 		background-size: cover;
-
-		&::before {
-			content: '';
-			position: absolute;
-			top: 0;
-			right: 0;
-			background: url(../img/advantages/bg-zigzag.svg) no-repeat center / contain;
-			width: 40%;
-			height: 100%;
-			z-index: 1;
-			pointer-events: none;
-		}
 	}
 
 	&__title {
@@ -31,7 +19,7 @@
 		line-height: 100%;
 		letter-spacing: -0.02em;
 		text-transform: uppercase;
-		color: #fff;
+		color: white;
 		margin: 0 0 80px;
 	}
 
@@ -67,7 +55,7 @@
 		justify-content: center;
 		font-weight: 700;
 		font-size: 13px;
-		color: #1c1c1c;
+		color: $black;
 
 	}
 
@@ -76,7 +64,7 @@
 		font-size: 30px;
 		line-height: 100%;
 		letter-spacing: -0.02em;
-		color: #1c1c1c;
+		color: $black;
 		margin: 0;
 	}
 }
