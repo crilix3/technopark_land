@@ -8,7 +8,6 @@
 
 			<a href="#" class="final-cta__button" data-modal-button="modalbox">
 				Записаться на пробное занятие
-				<img src="img/common/icon-arrow.svg" class="final-cta__button-icon" alt="arrow" />
 			</a>
 		</div>
 	</div>

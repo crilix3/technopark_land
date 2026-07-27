@@ -34,13 +34,11 @@
 				<div class="programs__item-info">
 					<h3 class="programs__item-info-title">{{ item.title | safe }}</h3>
 					<div class="programs__item-info-category">{{ item.category_text | safe }}</div>
+					<button class="programs__buttonLast" data-modal-button="modalbox">
+						Записаться
+					</button>
 				</div>
-				<button class="programs__item-button button" data-modal-button="modalbox" type="button">
-					Поступить
-				</button>
-				<button class="programs__buttonLast" data-modal-button="modalbox">
-					Записаться
-				</button>
+
 			</div>
 			{% endif %}
 			{% endfor %}
