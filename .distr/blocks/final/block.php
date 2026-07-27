@@ -5,9 +5,9 @@
 				Оставьте заявку на пробное занятие — куратор свяжется с вами, <br> поможет определиться с направлением и согласует удобную <br> дату и время
 			</h2>
 
-			<a href="#" class="final-cta__button" data-modal-button="modalbox">
+			<button class="final-cta__button" data-modal-button="modalbox">
 				Записаться на пробное занятие
-			</a>
+			</button>
 		</div>
 	</div>
 </section>
