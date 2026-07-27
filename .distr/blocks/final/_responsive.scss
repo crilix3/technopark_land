@@ -1,7 +1,7 @@
 .final-cta {
 	&__title {
 		font-size: 18px;
-		max-width: 100%;
+		margin-bottom: 12px;
 
 		br {
 			display: none;
@@ -11,10 +11,12 @@
 	&__button {
 		width: 100%;
 		font-size: 16px;
+		padding: 16px 20px;
 
 		&::before {
 			width: 26px;
 			height: 26px;
+			right: 10px;
 		}
 	}
 }
