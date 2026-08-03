@@ -9,14 +9,19 @@
 					{% for item in data.slider %}
 					<div class="main__slide swiper-slide {% if item.centered %}main__slide_centered{% endif %}">
 						<div class="main__slide-title">
-							<img class="d-desktop" src="{{ item.image_d | safe }}" alt="">
-							<img class="d-mobile" src="{{ item.image_m | safe }}" alt="">
-						</div> <!-- main__slide-title -->
+							<div class="main__slide-content d-desktop">
+								<img class="d-mobile" src="{{ item.image_m | safe }}" alt="">
+								<span class="main__slide-pretitle">Начни с пробного занятия</span>
+								<h1 class="main__slide-heading">Учись у тех, кто задаёт тренды в&nbsp;музыкальной индустрии</h1>
+								<p class="main__slide-text">Попробуй одно из 20 современных музыкальных направлений под руководством действующих артистов GAZ и преподавателей школы БАСТА × СИНЕРГИЯ</p>
+								<div class="main__slide-buttons">
+									<button class="main__slide-button main__slide-button_primary" data-modal-button="modalbox" type="button"><span>Попробовать бесплатно</span></button>
+									<a href="#programs" class="main__slide-button main__slide-button_secondary scroll"><span>Смотреть направления</span></a>
+								</div>
+							</div> <!-- main__slide-content -->
+						</div>
 						{% if item.date %}
 						<div class="main__slide-date">{{ item.date | safe }}</div>
-						{% endif %}
-						{% if item.popup %}
-						<button class="main__slide-button button arrowDecor" data-modal-button="{{ item.popup[1] | safe }}" type="button"><span>{{ item.popup[0] | safe }}</span></button>
 						{% endif %}
 						{% if data.mobile_form %}
 						<div class="main__slide-form d-mobile">
@@ -35,7 +40,8 @@
 			</div> <!-- main__slider -->
 
 			<div class="main__image">
-				<img src="img/main/basta.png" alt="">
+				<img class="main__image--desc" src="img/main/basta.png" alt="Баста">
+				<img class="main__image--mob" src="img/main/basta-mob.png" alt="Баста">
 			</div> <!-- main__image -->
 
 			{% if data.slider and data.slider.length > 1 %}
@@ -46,7 +52,7 @@
 			{% endif %}
 		</div> <!-- main__content -->
 
-		<a href="tel:+74951391151" class="main__phone-fab icons-phone" aria-label="Позвонить"></a>
+		<a href="tel:+79687258796" class="main__phone-fab icons-phone" aria-label="Позвонить"></a>
 
 	</div>
 </section> <!-- main -->

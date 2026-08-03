@@ -6,10 +6,11 @@
 			<img class="footer__nav-logo" src="img/footer/logo.svg" alt="logo">
 			<nav>
 				<ul>
-					<li><a href="#advantages" class="scroll">О школе</a></li>
-					<li><a href="#programs" class="scroll">Программы обучения</a></li>
-					<li><a href="#teachers" class="scroll">Преподаватели</a></li>
-					<li><a href="#faq" class="scroll">Частые вопросы</a></li>
+					<li><a href="#directions" class="scroll">Направления</a></li>
+					<li><a href="#lesson-slider" class="scroll">Что будет на занятии</a></li>
+					<li><a href="#places" class="scroll">Кампус</a></li>
+					<li><a href="#outcomes" class="scroll">Что дальше?</a></li>
+					<li><a href="#faq" class="scroll">FAQ</a></li>
 					<li>
 						<button class="footer__nav-button button button_red arrowDecor" data-modal-button="modalbox" type="button">Подобрать программу</button>
 					</li>
@@ -25,7 +26,7 @@
 				<div class="footer__info-content">
 					<div class="footer__info-schedule">
 						<h3>График работы</h3>
-						<div><span>Пн. &mdash;&nbsp;вс.</span>&nbsp;09:00&nbsp;&mdash; 21:00</div>
+						<div><span>Пн. &mdash;&nbsp;вс.</span>&nbsp;09:00&nbsp;&mdash; 20:00</div>
 					</div>
 					<?php if ( $block['footer__info-phones'] ) { ?>
 						<div class="footer__info-phones">

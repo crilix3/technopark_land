@@ -12,8 +12,6 @@
 		align-items: center;
 		padding: 4px 8px;
 		backdrop-filter: blur(20px);
-		-webkit-backdrop-filter: blur(20px);
-		background: rgba(255, 255, 255, 0.9);
 		border-radius: 999px;
 		z-index: 2000;
 	}
@@ -21,6 +19,14 @@
 	&__logo {
 		height: 28px;
 		width: auto;
+
+		&--desc {
+			display: none;
+		}
+
+		&--mobile {
+			display: block;
+		}
 	}
 
 	&__nav {
@@ -79,11 +85,12 @@
 			&-mobile {
 				font-size: 12px;
 				font-weight: 500;
-				padding: 8px;
+				padding: 8px 24px 8px 8px;
 				display: block;
 
 				&::before {
 					font-size: 15px;
+					right: 4px;
 				}
 
 				span {

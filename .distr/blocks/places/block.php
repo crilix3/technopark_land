@@ -3,7 +3,9 @@
 <section class="places" id="places">
 	<div class="places__content">
 
-		<h2 class="places__title">почему ученики выбирают школу</h2>
+		<h2 class="places__title">Не просто аудитории.<br><span>Пространство,где создают музыку</span></h2>
+		<p class="places__txt">Современные студии, профессиональное оборудование и атмосфера, в которую хочется возвращаться снова</p>
+
 
 		<div class="places__slider swiper ">
 			<div class="places__slider-content swiper-wrapper">

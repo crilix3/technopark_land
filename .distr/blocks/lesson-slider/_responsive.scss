@@ -1,0 +1,58 @@
+.lesson-slider {
+	&__title {
+		font-size: 32px;
+		margin-bottom: 30px;
+	}
+
+	&__wrapper {
+		position: relative;
+		margin-bottom: 40px;
+	}
+
+	&__slider {
+		width: 100%;
+		padding: 20px 0;
+		overflow: visible;
+	}
+
+	&__slide {
+		width: 228px;
+		height: 274px;
+		border-radius: 16px;
+		fill: #000, linear-gradient(214.89deg, #ed131c -41.36%, rgba(237, 19, 28, 0) 55.13%), linear-gradient(50.98deg, #ed131c -43.66%, rgba(237, 19, 28, 0) 56.78%);
+		padding: 14px;
+
+		&-number {
+			font-size: 65px;
+		}
+
+		&-text {
+			font-size: 16px;
+		}
+
+		&.swiper-slide-active {
+			opacity: 1;
+			background: linear-gradient(135deg, $red 0%, $black 100%);
+			transform: scale(1.05);
+			border: 1px solid white;
+		}
+	}
+
+	&__caption {
+		font-size: 20px;
+		margin-bottom: 30px;
+	}
+
+	&__button {
+		width: 100%;
+		padding: 10px 12px;
+		font-size: 16px;
+		text-align: left;
+
+		&::before {
+			width: 25px;
+			height: 25px;
+			right: 8px;
+		}
+	}
+}

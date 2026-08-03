@@ -12,7 +12,7 @@ $fb_pixel = '';
 
 $unit = 'uncertain';
 $type = '';
-$land = 'first-lesson';
+$land = 'trial_lesson';
 $redirect = 'thanks/';
 $quote_id = '';
 
@@ -20,8 +20,8 @@ $quote_id = '';
 /* Blocks */
 $block['is-block-about'] = true;
 
-$block['phone-1'] = '8 495 139-11-51';
-$block['phone-2'] = '8 800 707-75-50';
+$block['phone-1'] = '8 968 725-87-96';
+$block['phone-2'] = '8 910 638 86 04';
 $block['email'] = '';
 
 $block['license-link'] = 'https://sys3.ru/zielseiten/shkolabasty.rf/license.pdf';

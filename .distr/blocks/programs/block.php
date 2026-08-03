@@ -4,10 +4,6 @@
 <section class="programs" id="programs" data-filteredAndLimitedCards>
 	<div class="container">
 
-		<h2 class="programs__title">
-			выберите направление<span data-quantity></span>
-		</h2>
-
 		<div class="programs__filter">
 			{% for button in data.buttons %}
 			<button class="programs__filter-button {% if loop.first %} active{% endif %}" type="button" data-filter="{{ button | safe }}" data-filterBtn>
@@ -32,8 +28,8 @@
 					<img src="img/programs/cards/{{ item.id | safe }}.jpg" alt="program-preview">
 				</div>
 				<div class="programs__item-info">
-					<h3 class="programs__item-info-title">{{ item.title | safe }}</h3>
 					<div class="programs__item-info-category">{{ item.category_text | safe }}</div>
+					<h3 class="programs__item-info-title">{{ item.title | safe }}</h3>
 					<button class="programs__buttonLast" data-modal-button="modalbox">
 						Записаться
 					</button>

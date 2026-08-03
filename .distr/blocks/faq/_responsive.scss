@@ -1,95 +1,46 @@
 .faq {
 	&__title {
-		font-weight: 900;
 		font-size: 32px;
-		text-align: center;
-		margin-bottom: 16px;
 	}
 
 	&__grid {
-		display: none;
-	}
-
-}
-
-.faq-mobile {
-	display: flex;
-	flex-direction: column;
-	gap: 8px;
-
-	&__item {
-		background: #ecedf0;
 		border-radius: 16px;
 		padding: 12px;
-		transition: background-color 0.3s ease;
 	}
 
-	&__header {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		gap: 12px;
-	}
+	&__item {
+		border-radius: 10px;
 
-	&__question {
-		font-size: 16px;
-		margin: 0;
-		color: $blackLight;
-		transition: color 0.3s ease;
-	}
-
-	&__button {
-		flex-shrink: 0;
-		width: 28px;
-		height: 28px;
-		background: $blackLight;
-		border-radius: 50%;
-		border: none;
-		display: grid;
-		place-items: center;
-		transition: all 0.4s ease;
-
-		&::after {
-			content: '';
-			width: 12px;
-			height: 12px;
-			background: url('../img/teachers/icon-plus.svg') no-repeat center / contain;
-			transition: transform 0.4s ease;
-		}
-	}
-
-	&__answer-wrap {
-		max-height: 0;
-		overflow: hidden;
-		transition: max-height 0.4s ease, margin-top 0.3s ease;
-	}
-
-	&__answer {
-		font-size: 14px;
-		line-height: 1.4;
-		margin: 0;
-		color: $blackLight;
-	}
-
-	&__item.is-open {
-		background-color: $blackLight;
-
-		.faq-mobile__question {
-			color: #fff;
+		&-header {
+			padding: 16px;
+			border-radius: 10px;
 		}
 
-		.faq-mobile__answer {
-			color: #fff;
+		&-question {
+			font-size: 16px;
 		}
 
-		.faq-mobile__answer-wrap {
-			max-height: 500px;
-			margin-top: 12px;
+		&-arrow {
+			width: 25px;
+			height: 25px;
+			border-radius: 3px;
+
+			&::before {
+				width: 14px;
+				height: 14px;
+			}
 		}
 
-		.faq-mobile__button {
-			background-color: $red;
-			transform: rotate(45deg);
+		&-answer {
+			padding: 16px;
+			border-radius: 10px;
+			font-weight: 500;
+			font-size: 14px;
+		}
+
+		&.active {
+			border-radius: 10px;
+
 		}
 	}
 }

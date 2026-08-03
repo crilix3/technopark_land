@@ -7,26 +7,28 @@
 		<div class="header__content">
 
 			<a href="<?= $BASE_HREF_QUERY ?>">
-				<img class="header__logo" src="img/header/logo.svg" alt="logo">
+				<img class="header__logo header__logo--desc" src="img/header/logo.svg" alt="logo">
+				<img class="header__logo header__logo--mobile" src="img/header/logo-mob.svg" alt="logo">
 			</a>
 
 			<nav class="header__nav">
 				<ul>
-					<li><a href="#advantages" class="scroll">О школе</a></li>
-					<li><a href="#programs" class="scroll">Программы обучения</a></li>
-					<li><a href="#teachers" class="scroll">Преподаватели</a></li>
-					<li><a href="#faq" class="scroll">Частые вопросы</a></li>
+					<li><a href="#directions" class="scroll">Направления</a></li>
+					<li><a href="#lesson-slider" class="scroll">Что будет на занятии</a></li>
+					<li><a href="#places" class="scroll">Кампус</a></li>
+					<li><a href="#outcomes" class="scroll">Что дальше?</a></li>
+					<li><a href="#faq" class="scroll">FAQ</a></li>
 				</ul>
 			</nav>
 
 			<div class="header__buttons">
 
-				<button class="buttonRegister icons-arrow-black" data-modal-button="modalbox" type="button">
+				<button class="buttonRegister" data-modal-button="modalbox" type="button">
 					<span>Записаться на пробное занятие</span>
 				</button>
-					<button class="buttonRegister buttonRegister-mobile icons-arrow-black" data-modal-button="modalbox" type="button">
-						<span>Записаться на пробник</span>
-					</button>
+				<button class="buttonRegister buttonRegister-mobile icons-arrow-black" data-modal-button="modalbox" type="button">
+					<span>Записаться на занятие</span>
+				</button>
 
 			</div>
 
@@ -34,10 +36,11 @@
 
 		<nav class="header__nav header__nav_mb">
 			<ul>
-				<li><a href="#advantages" class="scroll">О школе</a></li>
-				<li><a href="#programs" class="scroll">Программы обучения</a></li>
-				<li><a href="#teachers" class="scroll">Преподаватели</a></li>
-				<li><a href="#faq" class="scroll">Частые вопросы</a></li>
+				<li><a href="#directions" class="scroll">Направления</a></li>
+				<li><a href="#lesson-slider" class="scroll">Что будет на занятии</a></li>
+				<li><a href="#places" class="scroll">Кампус</a></li>
+				<li><a href="#outcomes" class="scroll">Что дальше?</a></li>
+				<li><a href="#faq" class="scroll">FAQ</a></li>
 			</ul>
 		</nav>
 	</div>
