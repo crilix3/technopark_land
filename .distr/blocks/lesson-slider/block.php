@@ -1,4 +1,4 @@
-<section class="lesson-slider" id="programs">
+<section class="lesson-slider" id="lesson-slider">
 	<div class="container">
 		<h2 class="lesson-slider__title">
 			Что будет на первом занятии?
