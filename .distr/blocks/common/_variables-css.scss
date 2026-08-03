@@ -1,0 +1,20 @@
+:root {
+
+	--width-mobile: #{$width-mobile};
+	--width-desktop: #{$width-desktop};
+	--max-width-desktop: #{$max-width-desktop};
+
+  --black: #{$black};
+  --orange: #{$orange};
+  --red: #{$red};
+  --gray10: #{$gray10};
+  --gray20: #{$gray20};
+  --gray40: #{$gray40};
+  --gray60: #{$gray60};
+  --gray80: #{$gray80};
+
+	--bs-gutter-x: 40px;
+
+  --header-height: 56px;
+  --header-thanks-height: 56px;
+}

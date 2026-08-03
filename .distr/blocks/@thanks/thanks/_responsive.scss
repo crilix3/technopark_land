@@ -1,0 +1,41 @@
+.thanks {
+	max-width: none;
+	border-radius: 16px;
+	background: white;
+	padding: 0;
+	margin-block: 38px 64px;
+
+	.container {
+		margin-top: 0;
+	}
+
+	&__top {
+		display: block;
+		border-radius: 8px;
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+		padding: 14px 12px;
+	}
+
+	&__header {
+		display: contents;
+		padding: 0;
+	}
+
+	&__title {
+		font-size: 32px;
+	}
+
+	&__img {
+		max-width: 80%;
+	}
+
+	&__button {
+		max-width: 100%;
+		min-height: 48px;
+		font-size: 18px;
+		padding-inline: 20px;
+		order: 2;
+	}
+}

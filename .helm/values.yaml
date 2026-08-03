@@ -1,0 +1,20 @@
+# Список редиректов. По умолчанию: redirects: []
+# Пример:
+# redirects:
+#   - host: domain1.com
+#     path: /
+#   - host: domain2.com
+#     path: /lp/test
+redirects: []
+
+
+# Список зеркал. Параметр query - необязательный. По умолчанию: mirrors: []
+# Пример:
+# mirrors:
+#   - host: domain1.com
+#     path: /
+#     query: partner=test
+#   - host: domain2.com
+#     path: /lp/test
+
+

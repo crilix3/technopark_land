@@ -1,0 +1,87 @@
+.ecosystem {
+
+  .container {
+    padding: 0;
+  }
+
+  &__content {
+    max-width: initial;
+    border-radius: 16px;
+    padding: 16px 0;
+  }
+
+  &__top {
+    margin: 0 8px;
+  }
+
+  &__box {
+    margin: 15px 0;
+    &-image {
+      width: 168px;
+      height: 60px;
+    }
+  }
+
+  &__animation {
+    height: 68px;
+    &-item {
+      width: calc(24 * pow(1.03, var(--idx)) * (100vw / 360));
+      height: calc(52 * pow(1.21, var(--idx)) * (100vw / 360));
+
+      &_1 {
+        width: 24px !important;
+        height: 52px !important;
+      }
+
+      &_2 {
+        width: 22px !important;
+      }
+    }
+  }
+
+  &__img {
+    margin-bottom: 12px;
+  }
+
+  &__info {
+    padding: 0 12px;
+
+    &-title {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    &-txt {
+      font-size: 14px;
+
+      &:nth-of-type(1) {
+        max-width: initial;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  &__photos {
+    gap: 10px;
+    margin: 60px 0 20px;
+
+    &-track {
+      gap: 3.3px;
+      height: 50px;
+      animation: scroll 40s linear infinite;
+
+      &-group {
+        gap: 3.3px;
+
+        IMG {
+          width: 772px;
+          height: 50px;
+        }
+      }
+    }
+  }
+
+  &__quote {
+    font-size: 14px;
+  }
+}

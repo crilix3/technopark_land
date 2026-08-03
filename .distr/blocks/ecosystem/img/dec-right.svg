@@ -1,0 +1,44 @@
+<svg width="69" height="151" viewBox="0 0 69 151" fill="none" xmlns="http://www.w3.org/2000/svg" class="ecosystem__animation-svg">
+  <style>
+    .anim-group {
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
+      animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      animation-fill-mode: both;
+      animation-delay: var(--item-delay, 0s);
+    }
+
+    /* Пропадающий дубль */
+    .group-base {
+      animation-name: svg-pulse-shrink;
+      transform-origin: right center;
+    }
+
+    /* Выезжает слева */
+    .group-secondary {
+      animation-name: svg-pulse-slide-left;
+    }
+
+    @keyframes svg-pulse-shrink {
+      0% { transform: scale(1); }
+      15%, 100% { transform: scale(0); }
+    }
+
+    @keyframes svg-pulse-slide-left {
+      0% { transform: translateX(-100%); }
+      20%, 100% { transform: translateX(0); }
+    }
+  </style>
+
+  <!-- КОПИЯ 1: пропадает (scale → 0) -->
+  <g class="anim-group group-base">
+    <path d="M-0.00549316 150.245C6.97013 146.375 13.2432 141.767 18.812 136.417C26.863 128.527 33.1427 119.348 37.6513 108.882C42.1599 98.2545 44.4145 86.9828 44.4145 75.0673C44.4145 63.1517 42.1599 51.9606 37.6513 41.4942C33.1427 30.8668 26.863 21.6081 18.812 13.718C13.2431 8.36753 6.97029 3.79549 -0.00549316 0V150.245Z" fill="#ED131C"/>
+    <path d="M44.6171 134.226C51.6405 126.842 57.201 118.394 61.2985 108.882C65.8071 98.2545 68.0617 86.9828 68.0617 75.0673C68.0617 63.1517 65.8071 51.9606 61.2985 41.4942C57.201 31.8357 51.6406 23.3077 44.6171 15.9102V134.226Z" fill="#ED131C"/>
+  </g>
+
+  <!-- КОПИЯ 2: выезжает слева -->
+  <g class="anim-group group-secondary">
+    <path d="M-0.00549316 150.245C6.97013 146.375 13.2432 141.767 18.812 136.417C26.863 128.527 33.1427 119.348 37.6513 108.882C42.1599 98.2545 44.4145 86.9828 44.4145 75.0673C44.4145 63.1517 42.1599 51.9606 37.6513 41.4942C33.1427 30.8668 26.863 21.6081 18.812 13.718C13.2431 8.36753 6.97029 3.79549 -0.00549316 0V150.245Z" fill="#ED131C"/>
+    <path d="M44.6171 134.226C51.6405 126.842 57.201 118.394 61.2985 108.882C65.8071 98.2545 68.0617 86.9828 68.0617 75.0673C68.0617 63.1517 65.8071 51.9606 61.2985 41.4942C57.201 31.8357 51.6406 23.3077 44.6171 15.9102V134.226Z" fill="#ED131C"/>
+  </g>
+</svg>

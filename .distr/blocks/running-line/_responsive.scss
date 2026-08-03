@@ -1,0 +1,20 @@
+.running-line {
+
+    .marquee-infinite {
+        height: 41px;
+
+        DIV {
+            animation: marquee-infinite 30s linear infinite;
+        }
+    }
+
+    &__item {
+        padding: 0 14px;
+
+        IMG {
+            max-width: none;
+            height: 41px;
+            width: 671px;
+        }
+    }
+}

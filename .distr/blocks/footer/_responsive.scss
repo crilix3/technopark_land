@@ -1,0 +1,207 @@
+.footer {
+
+	&__nav {
+		flex-direction: column;
+		align-items: initial;
+		gap: 16px;
+		padding: 12px 0;
+
+		&-logo {
+			width: 100px;
+		}
+
+		&-button {
+			font-size: 14px;
+			padding: 8px 34px 8px 10px;
+			width: initial;
+
+			&.button.arrowDecor::after {
+				width: 24px;
+				height: 24px;
+				right: 4px;
+			}
+		}
+
+
+		nav {
+			width: initial;
+			margin: 0 -12px 0;
+			padding: 0 12px;
+			overflow: auto;
+			-ms-overflow-style: none;
+			-webkit-overflow-scrolling: touch;
+			scrollbar-width: none;
+			scrollbar-color: transparent transparent;
+
+			&::-webkit-scrollbar {
+				display: none
+			}
+
+			ul {
+				justify-content: initial;
+				flex-shrink: 0;
+				gap: 4px;
+
+				li {
+					flex-shrink: 0;
+
+					&:last-child {
+						order: -1
+					}
+
+					a {
+						font-size: 14px;
+						padding: 8px 10px;
+					}
+				}
+			}
+		}
+	}
+
+	&__content {
+		display: grid;
+		grid-template-columns: initial;
+		justify-content: initial;
+	}
+
+	&__info {
+		border-radius: 16px;
+		padding: 16px 12px;
+
+		&-title {
+			font-size: 18px;
+			margin-bottom: 16px;
+		}
+
+		&-content {
+			display: grid;
+			grid-template-columns: initial;
+			gap: 20px;
+		}
+
+		h3 {
+			font-size: 14px;
+			margin-bottom: 12px;
+		}
+
+		&-address {
+			font-size: 12px;
+
+			&-txt {
+				line-height: 120%;
+				margin-top: 12px;
+			}
+
+			span {
+				font-size: 16px;
+				margin-bottom: 6px;
+				padding-left: 18px;
+
+				&::before {
+					width: 15px;
+					height: 8px;
+				}
+			}
+		}
+
+		&-schedule {
+			display: grid;
+			gap: 4px;
+
+			div {
+				font-size: 14px;
+			}
+
+			span {
+				font-size: 12px;
+			}
+		}
+
+		&-phones,
+		&-phoneStudents {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+
+			DIV {
+				display: flex;
+				flex-direction: column;
+				gap: 5px;
+			}
+
+			a {
+				font-size: 16px;
+				letter-spacing: -0.01em;
+				border-width: 1px;
+
+				&:not(:last-child) {
+					margin-bottom: 8px;
+				}
+			}
+		}
+	}
+
+	&__feedback {
+		grid-template-rows: repeat(2, 48px);
+		gap: 8px;
+		margin-top: 20px;
+
+		&-button {
+			font-size: 16px;
+			padding: 16px 0;
+		}
+
+		a {
+			padding: 14px 0;
+		}
+
+		&-icon-vk {
+			width: 17px;
+		}
+
+		&-icon-tg {
+			width: 15px;
+		}
+	}
+
+	&__legal {
+		font-size: 14px;
+		gap: 20px;
+		padding: 30px 0;
+
+		&-policy {
+			order: -1;
+			margin-left: 0;
+		}
+
+		&-content {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 20px;
+
+			>div {
+				display: flex;
+				gap: 8px;
+			}
+		}
+
+		&-design,
+		&-synergyDigital {
+			flex-direction: column;
+			align-items: flex-start;
+
+			a {
+				display: flex;
+				align-items: center;
+			}
+		}
+
+		&-synergyDigital {
+			a {
+				display: flex;
+				align-items: center;
+			}
+		}
+	}
+
+}
