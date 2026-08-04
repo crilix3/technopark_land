@@ -16,7 +16,7 @@
 					<li><a href="#directions" class="scroll">Направления</a></li>
 					<li><a href="#lesson-slider" class="scroll">Что будет на занятии</a></li>
 					<li><a href="#places" class="scroll">Кампус</a></li>
-					<li><a href="#outcomes" class="scroll">Что дальше?</a></li>
+					<li><a href="#outcomes" class="scroll">Что дальше ?</a></li>
 					<li><a href="#faq" class="scroll">FAQ</a></li>
 				</ul>
 			</nav>
@@ -39,7 +39,7 @@
 				<li><a href="#directions" class="scroll">Направления</a></li>
 				<li><a href="#lesson-slider" class="scroll">Что будет на занятии</a></li>
 				<li><a href="#places" class="scroll">Кампус</a></li>
-				<li><a href="#outcomes" class="scroll">Что дальше?</a></li>
+				<li><a href="#outcomes" class="scroll">Что дальше ?</a></li>
 				<li><a href="#faq" class="scroll">FAQ</a></li>
 			</ul>
 		</nav>

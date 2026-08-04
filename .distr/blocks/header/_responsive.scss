@@ -1,11 +1,6 @@
 .header {
 	padding-top: 10px;
 
-	&.header-after-main nav a {
-		color: white;
-		background: $black;
-	}
-
 	&__content {
 		display: flex;
 		justify-content: space-between;

@@ -59,52 +59,21 @@
 	&__content {
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
-		align-items: start;
 		gap: 16px;
 		max-width: 1700px;
 	}
 
 	&__item {
-		min-height: 390px;
+		height: 450px;
 		min-width: 413px;
+		display: flex;
+		flex-direction: column;
 		position: relative;
 		border-radius: 20px;
 		overflow: hidden;
 		box-shadow: 1px 37px 48px 0 rgba(0, 0, 0, 0.06);
 		background: #000;
 		border: 1px solid $redDark;
-
-		&[data-filter*="Высшее образование"],
-		&[data-filter*="Колледж"],
-		&[data-filter*="Курсы"],
-		&[data-filter*="Для детей"] {
-
-			&::before {
-				content: '';
-				position: absolute;
-				width: 32px;
-				height: 32px;
-				left: 20px;
-				top: 20px;
-				z-index: 1;
-			}
-		}
-
-		&[data-filter*="Высшее образование"]::before {
-			background: url('../img/programs/icon-higherEdu.svg') no-repeat center / cover;
-		}
-
-		&[data-filter*="Колледж"]::before {
-			background: url('../img/programs/icon-college.svg') no-repeat center / cover;
-		}
-
-		&[data-filter*="Курсы"]::before {
-			background: url('../img/programs/icon-courses.svg') no-repeat center / cover;
-		}
-
-		&[data-filter*="Для детей"]::before {
-			background: url('../img/programs/icon-childrens.svg') no-repeat center / cover;
-		}
 
 		&-img {
 			position: relative;

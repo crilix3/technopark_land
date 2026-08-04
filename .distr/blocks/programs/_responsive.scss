@@ -40,22 +40,10 @@
 	}
 
 	&__item {
+		height: auto;
 		min-height: 250px;
 		min-width: initial;
 		border-radius: 16px;
-
-		&[data-filter*="Высшее образование"],
-		&[data-filter*="Колледж"],
-		&[data-filter*="Курсы"],
-		&[data-filter*="Для детей"] {
-
-			&::before {
-				width: 24px;
-				height: 24px;
-				left: 12px;
-				top: 12px;
-			}
-		}
 
 		&-img {
 			height: 180px;
