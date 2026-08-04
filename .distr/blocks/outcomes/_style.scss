@@ -21,6 +21,10 @@
 		letter-spacing: -0.01em;
 		text-align: center;
 		color: #fff;
+
+		br {
+			display: none;
+		}
 	}
 
 	&__list {

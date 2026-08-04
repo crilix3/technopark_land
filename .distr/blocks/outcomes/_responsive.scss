@@ -6,13 +6,17 @@
 	}
 
 	&__title {
-		font-size: 16px;
-		margin-bottom: 20px;
+		font-size: 32px;
+		margin-bottom: 30px;
 	}
 
 	&__subtitle {
 		font-size: 16px;
 		margin-bottom: 20px;
+
+		br {
+			display: block;
+		}
 	}
 
 	&__list {
@@ -41,14 +45,15 @@
 
 	&__button {
 		width: 100%;
-		padding: 10px 12px;
 		font-size: 16px;
+		padding: 16px 20px;
+		border-radius: 100px;
 		text-align: left;
 
 		&::before {
-			width: 25px;
-			height: 25px;
-			right: 8px;
+			width: 30px;
+			height: 30px;
+			right: 10px;
 		}
 	}
 }

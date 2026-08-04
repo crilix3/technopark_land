@@ -12,7 +12,7 @@
 							<div class="main__slide-content d-desktop">
 								<img class="d-mobile" src="{{ item.image_m | safe }}" alt="">
 								<span class="main__slide-pretitle">Начни с пробного занятия</span>
-								<h1 class="main__slide-heading">Учись у тех, кто задаёт тренды в&nbsp;музыкальной индустрии</h1>
+								<h1 class="main__slide-heading">Учись у тех, кто задаёт тренды в музыкальной индустрии</h1>
 								<p class="main__slide-text">Попробуй одно из 20 современных музыкальных направлений под руководством действующих артистов GAZ и преподавателей школы БАСТА × СИНЕРГИЯ</p>
 								<div class="main__slide-buttons">
 									<button class="main__slide-button main__slide-button_primary" data-modal-button="modalbox" type="button"><span>Попробовать бесплатно</span></button>

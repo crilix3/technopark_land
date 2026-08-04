@@ -12,8 +12,13 @@
 		background: black url('../img/main/bg_m.jpg') no-repeat right bottom / cover;
 	}
 
+	.container {
+		padding-right: var(--bs-gutter-x);
+	}
+
 	&__content {
 		position: relative;
+		z-index: 6;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -92,6 +97,8 @@
 		height: auto;
 
 		&-title {
+			width: 100%;
+
 			img {
 				width: 100%;
 				height: auto;
@@ -111,7 +118,7 @@
 		// &-title
 
 		&:nth-child(1) &-title {
-			width: 266px;
+			width: 100%;
 		}
 
 		&:nth-child(2) &-title {
@@ -136,10 +143,6 @@
 			font-size: 32px;
 			text-align: center;
 			margin-bottom: 20px;
-
-			br {
-				display: none;
-			}
 		}
 
 		&-text {
@@ -157,15 +160,15 @@
 
 		&-button {
 			border-radius: 100px;
-			padding: 10px;
 			font-size: 16px;
+			padding: 16px 20px;
 			width: 100%;
 
 			&_primary {
 				&::before {
-					height: 25px;
-					width: 25px;
-					right: 8px;
+					height: 30px;
+					width: 30px;
+					right: 10px;
 				}
 			}
 
@@ -173,9 +176,9 @@
 				border: 1px solid white;
 
 				&::before {
-					height: 25px;
-					width: 25px;
-					right: 8px;
+					height: 30px;
+					width: 30px;
+					right: 10px;
 				}
 			}
 		}
