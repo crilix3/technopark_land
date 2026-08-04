@@ -24,7 +24,6 @@
 			&[data-filter*="Колледж"],
 			&[data-filter*="Курсы"],
 			&[data-filter*="Для детей"] {
-				padding-right: 38px;
 
 				&::before {
 					width: 24px;
@@ -142,7 +141,7 @@
 	&__buttonLast {
 		font-weight: 500;
 		font-size: 18px;
-		border-radius: 8px;
+		border-radius: 100px;
 		padding: 7px 9px;
 	}
 }

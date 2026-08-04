@@ -1,4 +1,5 @@
 .faq {
+
 	&__title {
 		font-size: 32px;
 	}
@@ -6,6 +7,7 @@
 	&__grid {
 		border-radius: 16px;
 		padding: 12px;
+		gap: 8px;
 	}
 
 	&__item {
