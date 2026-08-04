@@ -4,6 +4,11 @@ if (document.querySelector('.lesson-slider__slider')) {
 		centeredSlides: true,
 		spaceBetween: 20,
 		initialSlide: 1,
+		loop: true,
+		autoplay: {
+			delay: 5000,
+			disableOnInteraction: false,
+		},
 		navigation: {
 			nextEl: '.lesson-slider__nav-button_next',
 			prevEl: '.lesson-slider__nav-button_prev',

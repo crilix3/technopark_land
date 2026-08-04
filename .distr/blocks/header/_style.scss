@@ -11,6 +11,12 @@
 	z-index: 100;
 	padding-top: 10px;
 
+	&.header-after-main nav a {
+		color: white;
+		background: $black;
+		border: 1px solid white;
+	}
+
 	&__content {
 		display: flex;
 		align-items: flex-start;

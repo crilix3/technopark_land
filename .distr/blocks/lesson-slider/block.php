@@ -26,21 +26,21 @@
 					<div class="swiper-slide lesson-slider__slide">
 						<span class="lesson-slider__slide-number">03</span>
 						<p class="lesson-slider__slide-text">
-							Узнаешь, как проходитобучение без скучной теории
+							Узнаешь, как проходит обучение без скучной теории
 						</p>
 					</div>
 
 					<div class="swiper-slide lesson-slider__slide">
 						<span class="lesson-slider__slide-number">04</span>
 						<p class="lesson-slider__slide-text">
-							Попробуешь современныйформат занятий
+							Попробуешь современный формат занятий
 						</p>
 					</div>
 
 					<div class="swiper-slide lesson-slider__slide">
 						<span class="lesson-slider__slide-number">05</span>
 						<p class="lesson-slider__slide-text">
-							Определишь, подходит литебе это направление
+							Определишь, подходит ли тебе это направление
 						</p>
 					</div>
 
