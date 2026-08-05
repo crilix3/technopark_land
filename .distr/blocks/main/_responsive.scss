@@ -60,19 +60,13 @@
 			width: 100%;
 			height: auto;
 			z-index: 1;
+			top: -10px;
 		}
 
 		&::after {
 			display: none;
 		}
 
-		&--desc {
-			display: none;
-		}
-
-		&--mob {
-			display: block;
-		}
 	}
 
 	// &__image
