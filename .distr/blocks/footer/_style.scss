@@ -1,5 +1,6 @@
 .footer {
 	background: #1E1E1E;
+	scroll-snap-align: start;
 
 	&__nav {
 		display: flex;

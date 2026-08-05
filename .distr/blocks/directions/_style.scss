@@ -1,6 +1,18 @@
 .directions {
 	position: relative;
-	overflow: hidden;
+	scroll-snap-align: start;
+
+	&::before {
+		content: '';
+		position: absolute;
+		background: url(../img/common/element.svg) no-repeat center / cover;
+		width: 40%;
+		height: 100%;
+		left: 0;
+		top: 50%;
+		transform: translate(-30%, -40%);
+		z-index: 1;
+	}
 
 	&__title {
 		margin: 0 0 50px;
@@ -30,6 +42,8 @@
 		list-style: none;
 		margin: 0;
 		padding: 0;
+		position: relative;
+		z-index: 2;
 	}
 
 	&__item {

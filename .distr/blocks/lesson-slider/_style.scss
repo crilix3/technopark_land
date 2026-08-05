@@ -2,9 +2,22 @@
 	position: relative;
 	text-align: center;
 	overflow: hidden;
+	scroll-snap-align: start;
 
 	--slide-width: 600px;
 	--nav-gap: 20px;
+
+	&::before {
+		content: '';
+		position: absolute;
+		background: url(../img/common/element.svg) no-repeat center / cover;
+		width: 40%;
+		height: 100%;
+		left: 0;
+		top: 0;
+		transform: translate(-30%, -20%);
+		z-index: 1;
+	}
 
 	&__title {
 		margin: 0 0 45px;
@@ -14,6 +27,8 @@
 		letter-spacing: -0.02em;
 		text-transform: uppercase;
 		color: #fff;
+		position: relative;
+		z-index: 2;
 	}
 
 	&__wrapper {
@@ -25,6 +40,8 @@
 		width: 100%;
 		padding: 20px 0;
 		overflow: visible;
+		position: relative;
+		z-index: 2;
 	}
 
 	&__slide {

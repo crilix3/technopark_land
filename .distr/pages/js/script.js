@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	//=include header/script.js
 	//=include main/script.js
+	//=include banner/script.js
 	//=include lesson-slider/script.js
 	//=include trial-cta/script.js
 	//=include intro/script.js

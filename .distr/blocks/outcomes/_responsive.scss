@@ -1,5 +1,11 @@
 .outcomes {
 
+	&::before {
+		width: 500px;
+		height: 500px;
+		transform: translate(40%, -20%);
+	}
+
 	&__item,
 	&__item_wide {
 		flex: 1 1 100%;
@@ -8,11 +14,15 @@
 	&__title {
 		font-size: 32px;
 		margin-bottom: 30px;
+		position: relative;
+		z-index: 2;
 	}
 
 	&__subtitle {
 		font-size: 16px;
 		margin-bottom: 20px;
+		position: relative;
+		z-index: 2;
 
 		br {
 			display: block;

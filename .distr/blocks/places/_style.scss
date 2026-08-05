@@ -1,4 +1,5 @@
 .places {
+	scroll-snap-align: start;
 
 	&__content {
 		display: flex;
@@ -30,7 +31,6 @@
 	}
 
 	&__slider {
-		//overflow-y: auto;
 		padding: 30px 0 100px;
 
 		&-content {
