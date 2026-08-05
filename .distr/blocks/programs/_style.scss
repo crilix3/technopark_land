@@ -1,7 +1,6 @@
 .programs {
 	position: relative;
 	overflow: hidden;
-	scroll-snap-align: start;
 
 	&::before {
 		content: '';

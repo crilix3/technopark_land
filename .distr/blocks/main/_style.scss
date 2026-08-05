@@ -5,7 +5,6 @@
 	padding-top: 0;
 	background: black url('../img/main/bg_d.jpg') no-repeat center top / cover;
 	overflow: hidden;
-	scroll-snap-align: start;
 
 	@include desktop {
 		&.bottom {
