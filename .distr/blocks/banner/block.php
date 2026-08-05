@@ -13,5 +13,10 @@
 				<span>Записаться на пробное занятие</span>
 			</button>
 		</div>
+
+		<button class="banner__scroll-down scroll-down" data-scroll-target="#benefits" type="button" aria-label="Прокрутить вниз">
+			<span class="scroll-down__icon"></span>
+		</button>
 	</div>
+
 </section>

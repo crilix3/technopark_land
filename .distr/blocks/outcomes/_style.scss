@@ -1,6 +1,20 @@
 .outcomes {
 	position: relative;
 	text-align: center;
+	overflow: hidden;
+
+	&::before {
+		content: '';
+		position: absolute;
+		background: url(../img/common/element.svg) no-repeat center / cover;
+		width: 80%;
+		height: 100%;
+		right: 0;
+		top: 0;
+		transform: translate(40%, 10%);
+		z-index: 1;
+	}
+
 
 	&__title {
 		margin: 0 0 45px;
@@ -32,6 +46,8 @@
 		flex-wrap: wrap;
 		gap: 16px;
 		margin-bottom: 45px;
+		position: relative;
+		z-index: 2;
 	}
 
 	&__item {

@@ -233,10 +233,12 @@
 				color: white;
 				transition: all 0.3s ease;
 				position: relative;
+				border: 1px solid #ed131c;
 
 				&:hover {
 					background: $redDark;
 					color: white;
+					border: 1px solid white;
 				}
 
 				&::before {
@@ -257,10 +259,12 @@
 				background: rgba(0, 0, 0, 0.7);
 				color: white;
 				position: relative;
+				border: 1px solid rgba(0, 0, 0, 0.7);
 
 				&:hover {
 					background: $blackLight;
 					color: white;
+					border: 1px solid white;
 				}
 
 				&::before {

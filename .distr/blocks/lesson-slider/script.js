@@ -1,5 +1,8 @@
 if (document.querySelector('.lesson-slider__slider')) {
-	new Swiper('.lesson-slider__slider', {
+
+	const sliderEl = document.querySelector('.lesson-slider__slider');
+
+	const lessonSwiper = new Swiper(sliderEl, {
 		slidesPerView: 'auto',
 		centeredSlides: true,
 		spaceBetween: 20,
@@ -19,4 +22,24 @@ if (document.querySelector('.lesson-slider__slider')) {
 			},
 		},
 	});
+
+	let isWheeling = false;
+
+	sliderEl.addEventListener('wheel', (e) => {
+		if (isWheeling) return;
+
+		e.preventDefault();
+
+		if (e.deltaY > 0) {
+			lessonSwiper.slideNext();
+		} else {
+			lessonSwiper.slidePrev();
+		}
+
+		isWheeling = true;
+		setTimeout(() => {
+			isWheeling = false;
+		}, 600);
+	});
+
 }

@@ -30,6 +30,7 @@
 				<div class="programs__item-info">
 					<div class="programs__item-info-category">{{ item.category_text | safe }}</div>
 					<h3 class="programs__item-info-title">{{ item.title | safe }}</h3>
+					<div class="programs__item-info-desc">{{ item.desc | safe }}</div>
 					<button class="programs__buttonLast" data-modal-button="modalbox">
 						Записаться
 					</button>

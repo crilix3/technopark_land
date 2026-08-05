@@ -1,5 +1,6 @@
 .benefits {
 	position: relative;
+	scroll-snap-align: start;
 
 	&__title {
 		margin: 0 0 45px;

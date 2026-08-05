@@ -32,3 +32,26 @@
 		}
 	}
 }
+
+.scroll-down {
+	width: 36px;
+	height: 36px;
+	bottom: -10px;
+
+	&__icon {
+		width: 11px;
+		height: 11px;
+	}
+}
+
+@keyframes scroll-down-bounce {
+
+	0%,
+	100% {
+		transform: translateX(-50%) translateY(0);
+	}
+
+	50% {
+		transform: translateX(-50%) translateY(4px);
+	}
+}
