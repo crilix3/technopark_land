@@ -12,7 +12,7 @@ $fb_pixel = '';
 
 $unit = 'uncertain';
 $type = '';
-$land = 'trial_lesson';
+$land = 'basta_trial_lesson';
 $redirect = 'thanks/';
 $quote_id = '';
 
