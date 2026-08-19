@@ -252,7 +252,7 @@ gulp.task('revreplace', ['nunjucks'], function (callback) {
 
 	let
 		manifestCss = gulp.src(['manifest/css.json', 'manifest/icons.json']),
-		manifestImages = gulp.src('manifest/images.json', 'manifest/webp.json'),
+		manifestImages = gulp.src(['manifest/images.json', 'manifest/webp.json']),
 		manifestJs = gulp.src('manifest/js.json')
 		;
 
