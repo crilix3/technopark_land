@@ -92,37 +92,6 @@
 			margin-bottom: 12px;
 		}
 
-		&-address {
-			font-size: 12px;
-			font-weight: 400;
-			line-height: 1;
-
-			&-txt {
-				margin-top: 8px;
-			}
-
-			span {
-				font-size: 14px;
-				font-weight: 400;
-				line-height: 1;
-				display: inline-block;
-				position: relative;
-				margin-bottom: 4px;
-				padding-inline: 18px 8px;
-
-				&::before {
-					content: '';
-					position: absolute;
-					background: url('../img/footer/icon-metro.svg') no-repeat 0 100% / cover;
-					width: 15px;
-					height: 10px;
-					left: 0;
-					top: 50%;
-					transform: translateY(-50%);
-				}
-			}
-		}
-
 		&-schedule {
 			div {
 				font-size: 16px;

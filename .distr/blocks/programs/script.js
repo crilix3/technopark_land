@@ -51,7 +51,7 @@ function filteredAndLimitedItems(section) {
 	function showMore(elem, button, visibleElems, openElemsPerClick) {
 
 		const allItems = Array.from(section.querySelectorAll(elem))
-		const filteredCards= allItems.filter(item => item.style.display !== 'none')
+		const filteredCards= allItems.filter(item => !item.classList.contains('programs__item-hidden'))
 		const showMoreButton = section.querySelector(button)
 
 		const allItemsCountElem = section.querySelector('h2 [data-quantity]')
@@ -60,7 +60,11 @@ function filteredAndLimitedItems(section) {
 		if (!showMoreButton) return
 
 		filteredCards.forEach((item, index) => {
-			item.style.display = index < visibleElems ? '' : 'none'
+			if (index < visibleElems) {
+				item.classList.remove('programs__item-hidden')
+			} else {
+				item.classList.add('programs__item-hidden')
+			}
 		})
 
 		showMoreButton.style.display = filteredCards.length <= visibleElems ? 'none' : ''
@@ -75,7 +79,7 @@ function filteredAndLimitedItems(section) {
 
 			filteredCards.forEach((item, index) => {
 				if (index < nextVisibleCount) {
-					item.style.display = ''
+					item.classList.remove('programs__item-hidden')
 				}
 			})
 

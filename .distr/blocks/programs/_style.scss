@@ -94,6 +94,10 @@
 		position: relative;
 		z-index: 2;
 
+		&-hidden {
+			@include hidden;
+		} // &-hidden
+
 		&-img {
 			position: relative;
 			border-radius: 20px;

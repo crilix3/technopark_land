@@ -7,8 +7,10 @@
 		<div class="header__content">
 
 			<a href="<?= $BASE_HREF_QUERY ?>">
-				<img class="header__logo header__logo--desc" src="img/header/logo.svg" alt="logo">
-				<img class="header__logo header__logo--mobile" src="img/header/logo-mob.svg" alt="logo">
+				<picture>
+					<source media="(max-width: 767px)" srcset="img/header/logo-mob.svg">
+					<img src="img/header/logo.svg" alt="logo" class="header__logo">
+				</picture>
 			</a>
 
 			<nav class="header__nav">

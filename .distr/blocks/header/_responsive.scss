@@ -12,16 +12,9 @@
 	}
 
 	&__logo {
+		display: block;
 		height: 28px;
 		width: auto;
-
-		&--desc {
-			display: none;
-		}
-
-		&--mobile {
-			display: block;
-		}
 	}
 
 	&__nav {

@@ -84,26 +84,6 @@
 			margin-bottom: 12px;
 		}
 
-		&-address {
-			font-size: 12px;
-
-			&-txt {
-				line-height: 120%;
-				margin-top: 12px;
-			}
-
-			span {
-				font-size: 16px;
-				margin-bottom: 6px;
-				padding-left: 18px;
-
-				&::before {
-					width: 15px;
-					height: 8px;
-				}
-			}
-		}
-
 		&-schedule {
 			display: grid;
 			gap: 4px;

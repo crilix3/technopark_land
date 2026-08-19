@@ -1,3 +1,4 @@
+{% from 'common/macro.php' import webp %}
 {% from './data.php' import data %}
 
 <section class="places" id="places">
@@ -17,7 +18,7 @@
 					<div class="places__item-metro"><span>{{ item.metro | safe }}</span></div>
 					{% endif %}
 					<div class="places__item-txt">{{ item.txt | safe }}</div>
-					<img class="places__item-place" src="img/places/cards/{{ item.id }}.jpg" alt="">
+					{{ webp(url='img/places/cards/' ~ item.id ~ '.jpg', class='places__item-place') }}
 				</div><!-- places__item -->
 				<?php } ?>
 				{% endfor %}
