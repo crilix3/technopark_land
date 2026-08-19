@@ -3,7 +3,7 @@
 	<div class="container">
 
 		<div class="footer__nav">
-			<img class="footer__nav-logo" src="img/footer/logo.svg" alt="logo">
+			<img class="footer__nav-logo lazy" data-src="img/footer/logo.svg" alt="logo">
 			<nav>
 				<ul>
 					<li><a href="#directions" class="scroll">Направления</a></li>
@@ -47,10 +47,10 @@
 			<div class="footer__feedback">
 				<button class="footer__feedback-button button" data-modal-button="modalbox" type="button">Обратная связь</button>
 				<?php if ( $block['vk-link'] ) { ?>
-					<a href="<?= $block['vk-link'] ?>" target="_blank"><img src="img/footer/icon-vk.svg" alt="icon-vk" class="footer__feedback-icon-vk"></a>
+					<a href="<?= $block['vk-link'] ?>" target="_blank"><img data-src="img/footer/icon-vk.svg" alt="icon-vk" class="footer__feedback-icon-vk lazy"></a>
 				<?php } ?>
 				<?php if ( $block['tg-link'] ) { ?>
-					<a href="<?= $block['tg-link'] ?>" target="_blank"><img src="img/footer/icon-tg.svg" alt="icon-tg" class="footer__feedback-icon-tg"></a>
+					<a href="<?= $block['tg-link'] ?>" target="_blank"><img data-src="img/footer/icon-tg.svg" alt="icon-tg" class="footer__feedback-icon-tg lazy"></a>
 				<?php } ?>
 			</div>
 		</div>

@@ -1,3 +1,4 @@
+{% from 'common/macro.php' import webp %}
 {% import 'form/macro.php' as form %}
 
 {% macro block( data, main_class='', main_id='' ) %}
@@ -40,7 +41,7 @@
 			</div> <!-- main__slider -->
 
 			<div class="main__image">
-				<img class="main__image--desc" src="img/main/basta.png" alt="Баста" fetchpriority="high">
+				{{ webp(url='img/main/basta.png', class='main__image--desc', alt='Баста', lazy=false, fetchpriority=true) }}
 			</div> <!-- main__image -->
 
 			{% if data.slider and data.slider.length > 1 %}

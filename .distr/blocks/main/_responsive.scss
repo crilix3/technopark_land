@@ -1,7 +1,7 @@
 .main {
 	// height: 426px;
 	height: auto;
-	background: black url('../img/main/bg_m.jpg') no-repeat center top / cover;
+	background: black url('../img/main/bg_m.webp') no-repeat center top / cover;
 	padding-top: calc(var(--header-height) + 10px);
 
 	&.bottom {
@@ -9,7 +9,7 @@
 		border-radius: 24px 24px 0 0;
 		overflow: hidden;
 		margin-bottom: 64px;
-		background: black url('../img/main/bg_m.jpg') no-repeat right bottom / cover;
+		background: black url('../img/main/bg_m.webp') no-repeat right bottom / cover;
 	}
 
 	.container {
