@@ -11,6 +11,10 @@ const combine = require('stream-combiner2').obj;
 const os = require('os');
 const fs = require('fs');
 const pxtoviewport = require('postcss-px-to-viewport');
+const through = require('through2');
+const JavaScriptObfuscator = require('javascript-obfuscator');
+const htmlmin = require('gulp-htmlmin');
+
 
 
 /* Переменные окружения */
@@ -48,8 +52,8 @@ var CONFIG = {
 };
 
 /* Функция для модификации окружения Nunjucks */
-const nunjucksEnvironment = function(env) {
-	env.addFilter('setAttribute', function(dictionary, key, value) {
+const nunjucksEnvironment = function (env) {
+	env.addFilter('setAttribute', function (dictionary, key, value) {
 		dictionary[key] = value;
 		return dictionary;
 	});
@@ -79,7 +83,7 @@ gulp.task('connect', function (callback) {
 		port: CONFIG.proxyPortPhp
 	};
 
-	if ( os.type() == 'Windows_NT' ) {
+	if (os.type() == 'Windows_NT') {
 		/* Для запуска под Windows должен быть установлен локальный PHP и путь к нему указан в %PATH% */
 		serverConfig.bin = CONFIG.phpPath + 'php.exe';
 		serverConfig.ini = CONFIG.phpPath + 'php.ini';
@@ -90,7 +94,7 @@ gulp.task('connect', function (callback) {
 
 
 /* Задача для запуска browserSync, используя в качестве прокси PHP-сервер на порту 8001 */
-gulp.task('browserSync', ['connect'], function() {
+gulp.task('browserSync', ['connect'], function () {
 	console.log('* Запуск browserSync *');
 
 	browserSync.init({
@@ -109,7 +113,7 @@ gulp.task('browserSync', ['connect'], function() {
 gulp.task('clean', function () {
 	console.log('* Удаление предыдущей сборки *');
 
-	return del(['**', '!' + CONFIG.input + '**'], {force: true, cwd: CONFIG.output});
+	return del(['**', '!' + CONFIG.input + '**'], { force: true, cwd: CONFIG.output });
 });
 
 
@@ -117,17 +121,17 @@ gulp.task('clean', function () {
 gulp.task('images', function () {
 	console.log('* Копирование картинок *');
 
-	return gulp.src(['**/img/**/*.*', '!{~**/**,**/~**}/img/**/*.*', '!**/img/**/{~*.*,*.ps}'], {cwd: CONFIG.blocks, dot: true})
-	.pipe( plugins.if( !isDevelopment, plugins.rev() ) )
-	.pipe( plugins.changed(CONFIG.output + '/img/') )
-	.pipe( plugins.rename(function (path) {
-		let slash = '/';
-		if ( os.type() == 'Windows_NT' ) slash = '\\';
-		path.dirname = path.dirname.replace(slash + 'img', ''); /* Замена пути к картинкам для конечного пути: block/img/*.* -> img/block/*.* */
-	}) )
-	.pipe( gulp.dest(CONFIG.output + '/img/') )
-	.pipe( plugins.if( !isDevelopment, combine( plugins.rev.manifest('images.json'), gulp.dest('manifest'), plugins.debug({title: 'manifest -> images.json'}) ) ) )
-	;
+	return gulp.src(['**/img/**/*.*', '!{~**/**,**/~**}/img/**/*.*', '!**/img/**/{~*.*,*.ps}'], { cwd: CONFIG.blocks, dot: true })
+		.pipe(plugins.if(!isDevelopment, plugins.rev()))
+		.pipe(plugins.changed(CONFIG.output + '/img/'))
+		.pipe(plugins.rename(function (path) {
+			let slash = '/';
+			if (os.type() == 'Windows_NT') slash = '\\';
+			path.dirname = path.dirname.replace(slash + 'img', ''); /* Замена пути к картинкам для конечного пути: block/img/*.* -> img/block/*.* */
+		}))
+		.pipe(gulp.dest(CONFIG.output + '/img/'))
+		.pipe(plugins.if(!isDevelopment, combine(plugins.rev.manifest('images.json'), gulp.dest('manifest'), plugins.debug({ title: 'manifest -> images.json' }))))
+		;
 });
 
 
@@ -135,15 +139,15 @@ gulp.task('images', function () {
 gulp.task('scripts', function () {
 	console.log('* Копирование скриптов *');
 
-	return gulp.src(['**/*.js', '!{~**/**,**/~**}/*.js', '!**/~*.js'], {cwd: CONFIG.pages, dot: true})
-	.pipe( plugins.if( isDevelopment, plugins.plumber() ) )
-	.pipe( plugins.include({
-		includePaths: [CONFIG.blocks]
-	}) )
-	.pipe( plugins.if( !isDevelopment, plugins.rev() ) )
-	.pipe( gulp.dest(CONFIG.output) )
-	.pipe( plugins.if( !isDevelopment, combine( plugins.rev.manifest('js.json'), gulp.dest('manifest'), plugins.debug({title: 'manifest -> js.json'}) ) ) )
-	;
+	return gulp.src(['**/*.js', '!{~**/**,**/~**}/*.js', '!**/~*.js'], { cwd: CONFIG.pages, dot: true })
+		.pipe(plugins.if(isDevelopment, plugins.plumber()))
+		.pipe(plugins.include({
+			includePaths: [CONFIG.blocks]
+		}))
+		.pipe(plugins.if(!isDevelopment, plugins.rev()))
+		.pipe(gulp.dest(CONFIG.output))
+		.pipe(plugins.if(!isDevelopment, combine(plugins.rev.manifest('js.json'), gulp.dest('manifest'), plugins.debug({ title: 'manifest -> js.json' }))))
+		;
 });
 
 
@@ -151,26 +155,26 @@ gulp.task('scripts', function () {
 gulp.task('styles:css', function () {
 	console.log('* Копирование стилей *');
 
-	return gulp.src(['**/*.scss', '!{~**/**,**/~**}/*.scss', '!**/~*.scss'], {cwd: CONFIG.pages, dot: true})
-	.pipe( plugins.if( isDevelopment && CONFIG.isSourcemaps, plugins.sourcemaps.init() ) )
-	.pipe( plugins.if( isDevelopment, plugins.plumber() ) )
-	.pipe( plugins.sass({
-		includePaths: [CONFIG.blocks],
-		indentType: 'tab',
-		indentWidth: 1,
-		outputStyle: 'compact',
-		outputStyle: !isDevelopment ? 'compressed' : 'expanded'
-	}) )
-	.pipe( plugins.if( '**/*style.css', plugins.postcss( CONFIG.processors_desktop ) ) )
-	.pipe( plugins.if( '**/*responsive.css', plugins.postcss( CONFIG.processors_mobile ) ) )
-	.pipe( plugins.if( CONFIG.useAutoprefixer, plugins.autoprefixer({
-		browsers: ['last 1 version']
-	}) ) )
-	.pipe( plugins.if( isDevelopment && CONFIG.isSourcemaps, plugins.sourcemaps.write() ) )
-	.pipe( plugins.if( !isDevelopment, plugins.rev() ) )
-	.pipe( gulp.dest(CONFIG.output) )
-	.pipe( plugins.if( !isDevelopment, combine( plugins.rev.manifest('css.json'), gulp.dest('manifest'), plugins.debug({title: 'manifest -> css.json'}) ) ) )
-	;
+	return gulp.src(['**/*.scss', '!{~**/**,**/~**}/*.scss', '!**/~*.scss'], { cwd: CONFIG.pages, dot: true })
+		.pipe(plugins.if(isDevelopment && CONFIG.isSourcemaps, plugins.sourcemaps.init()))
+		.pipe(plugins.if(isDevelopment, plugins.plumber()))
+		.pipe(plugins.sass({
+			includePaths: [CONFIG.blocks],
+			indentType: 'tab',
+			indentWidth: 1,
+			outputStyle: 'compact',
+			outputStyle: !isDevelopment ? 'compressed' : 'expanded'
+		}))
+		.pipe(plugins.if('**/*style.css', plugins.postcss(CONFIG.processors_desktop)))
+		.pipe(plugins.if('**/*responsive.css', plugins.postcss(CONFIG.processors_mobile)))
+		.pipe(plugins.if(CONFIG.useAutoprefixer, plugins.autoprefixer({
+			browsers: ['last 1 version']
+		})))
+		.pipe(plugins.if(isDevelopment && CONFIG.isSourcemaps, plugins.sourcemaps.write()))
+		.pipe(plugins.if(!isDevelopment, plugins.rev()))
+		.pipe(gulp.dest(CONFIG.output))
+		.pipe(plugins.if(!isDevelopment, combine(plugins.rev.manifest('css.json'), gulp.dest('manifest'), plugins.debug({ title: 'manifest -> css.json' }))))
+		;
 });
 
 
@@ -178,111 +182,111 @@ gulp.task('styles:css', function () {
 gulp.task('styles:svg', function () {
 	console.log('* Генерация svg-иконок *');
 
-	return gulp.src(['**/icons/**/*.svg', '!{~**/**,**/~**}/icons/**/*.svg', '!**/icons/**/{~*.svg}'], {cwd: CONFIG.blocks, dot: true})
-	.pipe( plugins.svgToCss({
-		name:'icons.css',
-		prefix: 'icons-',
-		template: ".{{prefix}}{{filename}}{{postfix}}:before{background-image:url('{{{dataurl}}}');}"
-	}) )
-	.pipe( plugins.if( !isDevelopment, plugins.rev() ) )
-	.pipe( gulp.dest(CONFIG.output + '/css/') )
-	.pipe( plugins.if( !isDevelopment, combine( plugins.rev.manifest('icons.json'), gulp.dest('manifest'), plugins.debug({title: 'manifest -> icons.json'}) ) ) )
-	;
+	return gulp.src(['**/icons/**/*.svg', '!{~**/**,**/~**}/icons/**/*.svg', '!**/icons/**/{~*.svg}'], { cwd: CONFIG.blocks, dot: true })
+		.pipe(plugins.svgToCss({
+			name: 'icons.css',
+			prefix: 'icons-',
+			template: ".{{prefix}}{{filename}}{{postfix}}:before{background-image:url('{{{dataurl}}}');}"
+		}))
+		.pipe(plugins.if(!isDevelopment, plugins.rev()))
+		.pipe(gulp.dest(CONFIG.output + '/css/'))
+		.pipe(plugins.if(!isDevelopment, combine(plugins.rev.manifest('icons.json'), gulp.dest('manifest'), plugins.debug({ title: 'manifest -> icons.json' }))))
+		;
 });
 
 
 /* Задача для рендеринга шаблонов Nunjucks */
-gulp.task('nunjucks', ['styles:css', 'styles:svg', 'scripts'], function() {
+gulp.task('nunjucks', ['styles:css', 'styles:svg', 'scripts'], function () {
 	console.log('* Рендеринг шаблонов (Nunjucks) *');
 
-	return gulp.src(['**/*.{php,njk,svg}', '!{~**/**,**/~**}/*.{php,njk,svg}', '!**/~*.{php,njk,svg}'], {cwd: CONFIG.pages, dot: true})
-	.pipe( plugins.if( isDevelopment, plugins.plumber() ) )
-	.pipe( plugins.nunjucksRender({
-		path: [CONFIG.templates, CONFIG.blocks],
-		inheritExtension: true,
-		throwOnUndefined: true,
-		manageEnv: nunjucksEnvironment
-	}) )
-	/*.pipe( plugins.prettyHtml({
-		indent_size: 1,
-		indent_char: '	',
-		preserve_newlines: isDevelopment,
-		unformatted: ['script'],
-		max_preserve_newlines: 1
-	}) )*/
-	.pipe( gulp.dest(CONFIG.output) )
-	// .pipe( browserSync.reload({ stream: true }) )
-	;
+	return gulp.src(['**/*.{php,njk,svg}', '!{~**/**,**/~**}/*.{php,njk,svg}', '!**/~*.{php,njk,svg}'], { cwd: CONFIG.pages, dot: true })
+		.pipe(plugins.if(isDevelopment, plugins.plumber()))
+		.pipe(plugins.nunjucksRender({
+			path: [CONFIG.templates, CONFIG.blocks],
+			inheritExtension: true,
+			throwOnUndefined: true,
+			manageEnv: nunjucksEnvironment
+		}))
+		/*.pipe( plugins.prettyHtml({
+			indent_size: 1,
+			indent_char: '	',
+			preserve_newlines: isDevelopment,
+			unformatted: ['script'],
+			max_preserve_newlines: 1
+		}) )*/
+		.pipe(gulp.dest(CONFIG.output))
+		// .pipe( browserSync.reload({ stream: true }) )
+		;
 });
 
 
 /* Задача для копирования остальных файлов */
-gulp.task('other.pages', ['nunjucks'], function() {
+gulp.task('other.pages', ['nunjucks'], function () {
 	console.log('* Копирование остальных файлов *');
 
-	return gulp.src(['**/**', '!**/*.{php,scss,js}', '!{~**/**,**/~**}', '!**/~*.*'], {cwd: CONFIG.pages, dot: true})
-	.pipe( gulp.dest(CONFIG.output) )
-	;
+	return gulp.src(['**/**', '!**/*.{php,scss,js}', '!{~**/**,**/~**}', '!**/~*.*'], { cwd: CONFIG.pages, dot: true })
+		.pipe(gulp.dest(CONFIG.output))
+		;
 });
 
 
 /* Задача для замены имён файлов в HTML и CSS */
-gulp.task('revreplace', ['nunjucks'], function(callback) {
-	if ( isDevelopment ) return callback;
+gulp.task('revreplace', ['nunjucks'], function (callback) {
+	if (isDevelopment) return callback;
 
 	console.log('* Замена имён файлов *');
 
 	let
-	manifestCss = gulp.src(['manifest/css.json', 'manifest/icons.json']),
-	manifestImages = gulp.src('manifest/images.json'),
-	manifestJs = gulp.src('manifest/js.json')
-	;
+		manifestCss = gulp.src(['manifest/css.json', 'manifest/icons.json']),
+		manifestImages = gulp.src('manifest/images.json'),
+		manifestJs = gulp.src('manifest/js.json')
+		;
 
-	return gulp.src(['**/*.php', '**/*.css', '**/*.json'], {cwd: CONFIG.output})
-	.pipe( plugins.revReplace({
-		replaceInExtensions: ['.php', '.css'],
-		manifest: manifestCss
-	}) )
-	.pipe( plugins.revReplace({
-		replaceInExtensions: ['.php', '.css', '.json'],
-		manifest: manifestImages
-	}) )
-	.pipe( plugins.revReplace({
-		replaceInExtensions: ['.php'],
-		manifest: manifestJs
-	}) )
-	.pipe( plugins.debug({title: 'revReplace + manifest'}) )
-	.pipe( gulp.dest(CONFIG.output) )
-	;
+	return gulp.src(['**/*.php', '**/*.css', '**/*.json'], { cwd: CONFIG.output })
+		.pipe(plugins.revReplace({
+			replaceInExtensions: ['.php', '.css'],
+			manifest: manifestCss
+		}))
+		.pipe(plugins.revReplace({
+			replaceInExtensions: ['.php', '.css', '.json'],
+			manifest: manifestImages
+		}))
+		.pipe(plugins.revReplace({
+			replaceInExtensions: ['.php'],
+			manifest: manifestJs
+		}))
+		.pipe(plugins.debug({ title: 'revReplace + manifest' }))
+		.pipe(gulp.dest(CONFIG.output))
+		;
 });
 
 
 /* Задача для слежения за измениями в исходных файлах */
-gulp.task('watch', function() {
+gulp.task('watch', function () {
 	/* Копирование, когда изменились картинки  */
-	gulp.watch('**/img/*.{jpg,png,gif,svg}', {cwd: CONFIG.blocks}, ['images']);
+	gulp.watch('**/img/*.{jpg,png,gif,svg}', { cwd: CONFIG.blocks }, ['images']);
 
 	/* Пересборка CSS, когда изменились стили  */
-	gulp.watch('**/*.scss', {cwd: CONFIG.input}, ['styles:css']);
+	gulp.watch('**/*.scss', { cwd: CONFIG.input }, ['styles:css']);
 
 	/* Пересборка JS, когда изменились скрипты  */
-	gulp.watch('**/*.js', {cwd: CONFIG.input}, ['scripts']);
+	gulp.watch('**/*.js', { cwd: CONFIG.input }, ['scripts']);
 
 	/* Пересборка HTML, когда изменились страницы, шаблоны или блоки */
-	gulp.watch('**/*.{php,njk,svg,json}', {cwd: CONFIG.input}, ['nunjucks', 'revreplace']);
+	gulp.watch('**/*.{php,njk,svg,json}', { cwd: CONFIG.input }, ['nunjucks', 'revreplace']);
 
 	/* Обработка остальных файлов */
-	gulp.watch('**/*.*', {cwd: CONFIG.pages}, ['other.pages', 'revreplace']);
+	gulp.watch('**/*.*', { cwd: CONFIG.pages }, ['other.pages', 'revreplace']);
 
-	if ( CONFIG.reload ) {
+	if (CONFIG.reload) {
 		/* Перезагрузка браузера, когда что-то изменилось в сборке */
-		gulp.watch(['**/*.*', '!.distr/**'], {cwd: CONFIG.input}).on('change', browserSync.reload);
+		gulp.watch(['**/*.*', '!.distr/**'], { cwd: CONFIG.input }).on('change', browserSync.reload);
 	}
 });
 
 
 /* Задача для конечной сборки (для prod) */
-gulp.task('build', function(){
+gulp.task('build', function () {
 	runSequence.options.ignoreUndefinedTasks = true;
 
 	return runSequence(
@@ -290,34 +294,77 @@ gulp.task('build', function(){
 		'images',
 		['styles:css', 'scripts', 'other.pages'],
 		'nunjucks',
-		!isDevelopment ? 'revreplace' : null
-		);
+		!isDevelopment ? 'revreplace' : null,
+		!isDevelopment ? 'minify' : null
+	);
 });
 
 
 /* Задача по умолчанию (для dev) */
-gulp.task('default', function(){
+gulp.task('default', function () {
 	return runSequence(
 		'build',
 		'browserSync',
 		'watch'
-		);
+	);
 });
 
 
 /* Задача для сборки без поднятия сервера */
-gulp.task('nosync', function(){
+gulp.task('nosync', function () {
 	return runSequence(
 		'build',
 		'watch'
-		);
+	);
 });
 
 /* Задача для сборки без перезагрузки */
-gulp.task('noreload', function(){
+gulp.task('noreload', function () {
 	CONFIG.reload = false;
 
 	return runSequence(
 		'default'
-		);
+	);
+});
+
+// Обфускация данных
+
+gulp.task('obfuscate-script', function () {
+	return gulp.src('public/js/script.js')
+		.pipe(through.obj(function (file, enc, cb) {
+
+
+			const result = JavaScriptObfuscator.obfuscate(
+				file.contents.toString(),
+				{
+					compact: true,
+					identifierNamesGenerator: 'hexadecimal',
+					controlFlowFlattening: false,
+					stringArray: true,
+					stringArrayEncoding: 'base64'
+				}
+			);
+
+
+			file.contents = Buffer.from(result.getObfuscatedCode());
+			cb(null, file);
+		}))
+		.pipe(gulp.dest('public/js'));
+});
+
+/* Задача для минификации кода */
+gulp.task('minify', function () {
+	console.log('* Минификация *');
+
+
+	return gulp.src(['**/index.php', '!{~**/**,**/~**}/*.php', '!**/~*.php'], { cwd: CONFIG.output })
+		.pipe(htmlmin({
+			collapseWhitespace: true,
+			preserveLineBreaks: true,
+			removeComments: true,
+			minifyCSS: true,
+			removeScriptTypeAttributes: true,
+			removeStyleLinkTypeAttributes: true
+		}))
+		.pipe(gulp.dest(CONFIG.output));
 });
