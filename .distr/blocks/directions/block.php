@@ -1,4 +1,3 @@
-{% from 'common/macro.php' import webp %}
 {% from './data.php' import data %}
 
 <section class="directions" id="directions">
@@ -10,7 +9,7 @@
 			{% for item in data.items %}
 			<li class="directions__item">
 				<span class="directions__icon">
-					{{ webp(url=item.icon[0], alt=item.icon[1]) }}
+					<img class="lazy" data-src="{{ item.icon[0] | safe }}" alt="{{ item.icon[1] | safe }}">
 				</span>
 				<p class="directions__text">{{ item.text | safe }}</p>
 			</li>
