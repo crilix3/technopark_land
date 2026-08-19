@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	//=include main/script.js
 	//=include banner/script.js
 	//=include lesson-slider/script.js
-	//=include trial-cta/script.js
 	//=include intro/script.js
 	//=include programs/script.js
 	//=include places/script.js

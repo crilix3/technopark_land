@@ -40,8 +40,7 @@
 			</div> <!-- main__slider -->
 
 			<div class="main__image">
-				<img class="main__image--desc" src="img/main/basta.png" alt="Баста">
-
+				<img class="main__image--desc" src="img/main/basta.png" alt="Баста" fetchpriority="high">
 			</div> <!-- main__image -->
 
 			{% if data.slider and data.slider.length > 1 %}

@@ -50,6 +50,7 @@ if ( is_local_dev() ) {
 	{#<link rel="stylesheet" href="css/common.responsive.css" media="(max-width: 767px)">#}
 	{#<link rel="stylesheet" href="css/common.ultrawide.css" media="(min-width: 1920px)">#}
 
+  	<link rel="preload" href="css/fonts/synergysans/synergysans-vf.ttf" as="font" type="font/ttf" crossorigin>
 	{% block styles %}
 	{% endblock %}
 

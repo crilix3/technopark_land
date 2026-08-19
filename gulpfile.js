@@ -134,6 +134,22 @@ gulp.task('images', function () {
 		;
 });
 
+/* Задача для конвертирования в webp */
+gulp.task('webp', ['images'], function () {
+	console.log('* Конвертирование в webp *');
+
+	return gulp.src(['**/img/**/*.*', '!**/img/**/*.ps*'], {cwd: CONFIG.blocks})
+	.pipe( plugins.webp() ) /* Конвертируем в webp */
+	.pipe( plugins.if( !isDevelopment, plugins.rev() ) )
+	.pipe( plugins.rename(function (path) {
+		let slash = '/';
+		if ( os.type() == 'Windows_NT' ) slash = '\\';
+		path.dirname = path.dirname.replace(slash + 'img', ''); /* Замена пути к картинкам для конечного пути: block/img/*.* -> img/block/*.* */
+	}) )
+	.pipe( gulp.dest(CONFIG.output + '/img/') )
+	.pipe( plugins.if( !isDevelopment, combine( plugins.rev.manifest('webp.json'), gulp.dest('manifest'), plugins.debug({title: 'manifest -> webp.json'}) ) ) )
+	;
+});
 
 /* Задача для JS */
 gulp.task('scripts', function () {
@@ -152,7 +168,7 @@ gulp.task('scripts', function () {
 
 
 /* Задача для CSS */
-gulp.task('styles:css', function () {
+gulp.task('styles:css', ['styles:svg'], function () {
 	console.log('* Копирование стилей *');
 
 	return gulp.src(['**/*.scss', '!{~**/**,**/~**}/*.scss', '!**/~*.scss'], { cwd: CONFIG.pages, dot: true })
@@ -184,19 +200,17 @@ gulp.task('styles:svg', function () {
 
 	return gulp.src(['**/icons/**/*.svg', '!{~**/**,**/~**}/icons/**/*.svg', '!**/icons/**/{~*.svg}'], { cwd: CONFIG.blocks, dot: true })
 		.pipe(plugins.svgToCss({
-			name: 'icons.css',
+			name: 'icons.scss',
 			prefix: 'icons-',
 			template: ".{{prefix}}{{filename}}{{postfix}}:before{background-image:url('{{{dataurl}}}');}"
 		}))
-		.pipe(plugins.if(!isDevelopment, plugins.rev()))
 		.pipe(gulp.dest(CONFIG.output + '/css/'))
-		.pipe(plugins.if(!isDevelopment, combine(plugins.rev.manifest('icons.json'), gulp.dest('manifest'), plugins.debug({ title: 'manifest -> icons.json' }))))
 		;
 });
 
 
 /* Задача для рендеринга шаблонов Nunjucks */
-gulp.task('nunjucks', ['styles:css', 'styles:svg', 'scripts'], function () {
+gulp.task('nunjucks', ['styles:css', 'scripts'], function () {
 	console.log('* Рендеринг шаблонов (Nunjucks) *');
 
 	return gulp.src(['**/*.{php,njk,svg}', '!{~**/**,**/~**}/*.{php,njk,svg}', '!**/~*.{php,njk,svg}'], { cwd: CONFIG.pages, dot: true })
@@ -238,7 +252,7 @@ gulp.task('revreplace', ['nunjucks'], function (callback) {
 
 	let
 		manifestCss = gulp.src(['manifest/css.json', 'manifest/icons.json']),
-		manifestImages = gulp.src('manifest/images.json'),
+		manifestImages = gulp.src('manifest/images.json', 'manifest/webp.json'),
 		manifestJs = gulp.src('manifest/js.json')
 		;
 
@@ -292,6 +306,7 @@ gulp.task('build', function () {
 	return runSequence(
 		'clean',
 		'images',
+		!isDevelopment ? 'webp' : null,
 		['styles:css', 'scripts', 'other.pages'],
 		'nunjucks',
 		!isDevelopment ? 'revreplace' : null,

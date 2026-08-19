@@ -1,41 +1,20 @@
+{% from 'common/macro.php' import webp %}
+{% from './data.php' import data %}
+
 <section class="directions" id="directions">
 	<div class="container">
-		<h2 class="directions__title">
-			Выбери своё направление
-		</h2>
-
-		<p class="directions__subtitle">
-			От вокала до саунд-дизайна — у нас есть всё,<br>
-			чтобы раскрыть твой талант и найти своё звучание
-		</p>
+		<h2 class="directions__title">{{ data.title | safe }}</h2>
+		<p class="directions__subtitle">{{ data.subtitle | safe }}</p>
 
 		<ul class="directions__list">
+			{% for item in data.items %}
 			<li class="directions__item">
 				<span class="directions__icon">
-					<img src="img/directions/icon-list.svg" alt="icon-list">
+					{{ webp(url=item.icon[0], alt=item.icon[1]) }}
 				</span>
-				<p class="directions__text">
-					20+ актуальных направлений
-				</p>
+				<p class="directions__text">{{ item.text | safe }}</p>
 			</li>
-
-			<li class="directions__item">
-				<span class="directions__icon">
-					<img src="img/directions/icon-mic.svg" alt="icon-mic">
-				</span>
-				<p class="directions__text">
-					Практикующие музыканты и продюсеры
-				</p>
-			</li>
-
-			<li class="directions__item">
-				<span class="directions__icon">
-					<img src="img/directions/icon-mixer.svg" alt="icon-mixer">
-				</span>
-				<p class="directions__text">
-					Актуальные программы и оборудование
-				</p>
-			</li>
+			{% endfor %}
 		</ul>
 	</div>
 </section>

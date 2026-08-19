@@ -1,5 +1,5 @@
+{% from 'common/macro.php' import webp %}
 {% from './data.php' import data %}
-
 
 <section class="programs" id="programs" data-filteredAndLimitedCards>
 	<div class="container">
@@ -25,7 +25,7 @@
 			{% else %}
 			<div class="programs__item" data-item data-filter="{{ item.category | safe }}">
 				<div class="programs__item-img">
-					<img src="img/programs/cards/{{ item.id | safe }}.jpg" alt="program-preview">
+					{{ webp(url='img/programs/cards/' ~ item.id ~ '.jpg', alt='program-preview') }}
 				</div>
 				<div class="programs__item-info">
 					<div class="programs__item-info-category">{{ item.category_text | safe }}</div>
