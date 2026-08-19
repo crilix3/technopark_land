@@ -38,9 +38,13 @@ function filteredAndLimitedItems(section) {
 					const itemFilters = item.dataset.filter.split('•').map(f => f.trim().toLowerCase())
 
 					if (filter === resetFilterButtonTxt) {
-						item.style.display = ''
+						item.classList.remove('programs__item-hidden')
 					} else {
-						item.style.display = itemFilters.some(f => f.includes(filter)) ? '' : 'none'
+						if (itemFilters.some(f => f.includes(filter))) {
+                            item.classList.remove('programs__item-hidden')
+                        } else {
+                            item.classList.add('programs__item-hidden')
+                        }
 					}
 				}
 				showMore('[data-item]', '[data-moreBtn]', visibleElems, openElemsPerClick)
