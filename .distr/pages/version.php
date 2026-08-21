@@ -52,7 +52,7 @@ $h2 = '';
 /* Versions */
 switch ($version) {
 	case 'basta_trial_kids':
-	$land = 'basta_trial_kids';
+		$land = 'basta_trial_kids';
 	break;
 }
 
