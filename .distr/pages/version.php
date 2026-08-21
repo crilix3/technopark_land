@@ -50,6 +50,11 @@ $h2 = '';
 
 
 /* Versions */
+switch ($version) {
+	case 'basta_trial_kids':
+		$land = 'basta_trial_kids';
+	break;
+}
 
 /* Postprocess */
 $block['phone-1-link'] = get_phone_link($block['phone-1']);

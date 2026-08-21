@@ -9,12 +9,9 @@ redirects: []
 
 
 # Список зеркал. Параметр query - необязательный. По умолчанию: mirrors: []
-# Пример:
-# mirrors:
-#   - host: domain1.com
-#     path: /
-#     query: partner=test
-#   - host: domain2.com
-#     path: /lp/test
+mirrors:
+  - host: xn--80aac8afrzi0cyb.xn--p1ai
+    path: /trial_kids
+    query: version=basta_trial_kids
 
 
