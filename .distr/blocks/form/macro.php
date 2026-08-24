@@ -78,7 +78,7 @@ select
 	<div class="form__footer">
 		<label class="form__footer-label">
 			<div class="form__footer-checkbox">
-				<input type="checkbox" name="personalDataAgree">
+				<input type="checkbox" name="personalDataAgree" checked>
 				<div class="form__footer-checkbox-icon icon-checkbox"></div>
 			</div>
 			<div class="form__footer-txt">Даю согласие на&nbsp;обработку персональных данных и&nbsp;соглашаюсь <nobr>с&nbsp;<a href="<?= $block['privacy-link'] ?>" target="_blank" class="link-unhover">политикой конфиденциальности</a></nobr></div>
