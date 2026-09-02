@@ -44,15 +44,16 @@ $block['footer__info-phones'] = true;
 $block['footer__legal-design'] = true;
 $block['footer__legal-synergydigital'] = true;
 
-
 $h1 = '';
 $h2 = '';
-
 
 /* Versions */
 switch ($version) {
 	case 'basta_trial_kids':
 		$land = 'basta_trial_kids';
+	break;
+	case 'two':
+		$land = 'two';
 	break;
 }
 
