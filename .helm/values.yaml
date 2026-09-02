@@ -13,5 +13,9 @@ mirrors:
   - host: xn--80aac8afrzi0cyb.xn--p1ai
     path: /trial_kids
     query: version=basta_trial_kids
+  - host: xn--80aac8afrzi0cyb.xn--p1ai
+    path: /2
+    query: version=two
+
 
 

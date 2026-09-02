@@ -54,6 +54,9 @@ switch ($version) {
 	case 'basta_trial_kids':
 		$land = 'basta_trial_kids';
 	break;
+	case 'two':
+		$land = 'two';
+	break;
 }
 
 /* Postprocess */
