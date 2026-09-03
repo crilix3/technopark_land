@@ -15,7 +15,7 @@ mirrors:
     query: version=basta_trial_kids
   - host: xn--80aac8afrzi0cyb.xn--p1ai
     path: /trial_lesson/2
-    query: version=two
+    query: version=trial_lesson_two
 
 
 
