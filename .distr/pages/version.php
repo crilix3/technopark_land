@@ -52,8 +52,8 @@ switch ($version) {
 	case 'basta_trial_kids':
 		$land = 'basta_trial_kids';
 	break;
-	case 'trial_two':
-		$land = 'basta_trial_lesson_two';
+	case 'trial_lesson_two':
+		$land = 'trial_lesson_two';
 	break;
 }
 
