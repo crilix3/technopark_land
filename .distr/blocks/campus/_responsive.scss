@@ -1,0 +1,56 @@
+.campus {
+  padding-top: 50px;
+  z-index: 6;
+
+  .circle-mobile {
+    top: 50%;
+    left: -50%;
+  }
+
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  &__title {
+    font-size: 40px;
+    line-height: 1.1;
+  }
+
+  &__carousel {
+    padding-top: 3rem;
+
+    .d-mobile {
+      display: block !important;
+    }
+    .d-desktop {
+      display: none !important;
+    }
+
+    &-comp {
+      padding-bottom: 3rem;
+      perspective: 1400px;
+    }
+
+    &-wrap,
+    &-element {
+      width: 238px;
+      height: 192px;
+    }
+
+    &-img_block {
+      border-radius: 1.25rem;
+    }
+
+    &-inner {
+      top: -0.7rem;
+      left: -2.5rem;
+      bottom: -0.7rem;
+      right: -2.5rem;
+    }
+
+    &-text {
+      font-size: 16px;
+    }
+  }
+}

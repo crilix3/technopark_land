@@ -5,13 +5,12 @@ document.addEventListener('DOMContentLoaded', function () {
 	//=include form/script.js
 
 	//=include header/script.js
+	//=include circle/script.js
 	//=include main/script.js
-	//=include banner/script.js
-	//=include lesson-slider/script.js
+	//=include campus/script.js
+	//=include global-studio/script.js
 	//=include intro/script.js
-	//=include programs/script.js
 	//=include places/script.js
-	//=include faq/script.js
 
 	//=include modal/script.js
 });

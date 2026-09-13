@@ -9,16 +9,13 @@
 
 
 {% block blocks_inner %}
+{% include 'circle/block.php' %}
 {% include 'header/block.php' %}
 {% include 'main/block.php' %}
-{% include 'directions/block.php' %}
-{% include 'programs/block.php' %}
-{% include 'banner/block.php' %}
-{% include 'benefits/block.php' %}
-{% include 'lesson-slider/block.php' %}
+{% include 'campus/block.php' %}
+{% include 'global-studio/block.php' %}
 {% include 'places/block.php' %}
-{% include 'outcomes/block.php' %}
-{% include 'faq/block.php' %}
+{% include 'author-intro/block.php' %}
 {% include 'final/block.php' %}
 
 {% endblock %}

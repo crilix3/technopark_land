@@ -1,0 +1,133 @@
+.global-studio {
+  padding: 0;
+  position: relative;
+
+  .d-mobile {
+    display: none;
+  }
+  .d-desktop {
+    margin-top: 110px;
+    display: block;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 80px;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: 850;
+    margin-bottom: 40px;
+  }
+
+  &__subtitle {
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 40px;
+    color: white;
+    text-align: center;
+  }
+
+  &__equipments {
+    margin-top: 140px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 180px 90px;
+    align-items: start;
+  }
+
+  &__card {
+    position: relative;
+    z-index: 1;
+    min-height: 220px;
+    isolation: isolate;
+
+    &:last-child {
+      grid-column: span 2;
+      margin-right: 300px;
+    }
+
+    &-body {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    &-name {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #ed1319;
+      margin: 0;
+    }
+
+    &-desc {
+      font-size: 50px;
+      font-weight: 500;
+      line-height: 1.15;
+      color: #fff;
+      margin: 0;
+    }
+
+    &-link {
+      display: inline-block;
+      align-self: flex-start;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #fff;
+      text-decoration: none;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #ed1319;
+      transition:
+        color 0.2s ease,
+        border-color 0.2s ease;
+
+      &:hover {
+        color: #ed1319;
+      }
+    }
+
+    &-img {
+      position: absolute;
+      top: 50%;
+      right: 65px;
+      width: 260px;
+      height: auto;
+      transform: translateY(0) rotate(18deg);
+      border-radius: 24px;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+      z-index: 1;
+      // pointer-events: none;
+      object-fit: cover;
+      visibility: hidden;
+      opacity: 0;
+      transition: 0.3s;
+    }
+
+    &-body:hover ~ &-img,
+    &-img:hover {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(-50%) rotate(18deg);
+    }
+  }
+  &__buttons {
+    width: 100%;
+    display: flex;
+    text-align: center;
+  }
+}

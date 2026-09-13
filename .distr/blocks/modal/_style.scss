@@ -82,7 +82,7 @@
 		transition: opacity 0.15s ease;
 		pointer-events: none;
 		z-index: 98;
-		border:none;
+		border: none;
 		opacity: 0;
 
 		&--show {
@@ -101,6 +101,10 @@
 		background: $gray10;
 		border-radius: 16px;
 		padding: 40px 24px;
+
+		&--1200 {
+			width: 1200px;
+		}
 	}
 
 	.form {
@@ -134,18 +138,18 @@
 				}
 			}
 		}
+	}
 
-		&__footer {
-			&-text {
+	&__footer {
+		&-text {
+			color: $black;
+
+			a,
+			a:hover {
 				color: $black;
-
-				a, a:hover {
-					color: $black;
-				}
 			}
 		}
 	}
-
 
 	&_thanks {
 		.modalbox {
@@ -164,7 +168,6 @@
 			&__img {
 				width: 100%;
 				height: 310px;
-				// background: url('../img/modal/thanks.jpg') no-repeat center / cover;
 				border-radius: 16px 16px 0 0;
 			}
 
@@ -194,5 +197,115 @@
 
 }
 
+
+.event-picker {
+	text-align: center;
+
+	&__title {
+		font-weight: 500;
+		font-size: 50px;
+		line-height: 100%;
+		letter-spacing: -0.03em;
+		text-align: center;
+		color: #1c1c1c;
+		margin-bottom: 40px;
+	}
+
+	&__cards {
+		display: flex;
+		gap: 16px;
+		margin-bottom: 24px;
+	}
+
+	&__next {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		margin-left: auto;
+		border-radius: 100px;
+		padding: 20px 12px 20px 20px;
+		width: 260px;
+		height: 64px;
+		box-shadow: 0 4px 4px 0 rgba(221, 0, 0, 0.25);
+		background: $red;
+		font-weight: 500;
+		font-size: 22px;
+		line-height: 100%;
+		letter-spacing: -0.01em;
+		color: white;
+
+		&::after {
+			content: '';
+			position: absolute;
+			background: url('../img/common/icon-arrow.svg') no-repeat center / cover;
+			width: 40px;
+			height: 40px;
+			right: 10px;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
+		&:disabled {
+			opacity: .5;
+			pointer-events: none;
+		}
+	}
+}
+
+.event-card {
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: 25px;
+	flex: 1;
+	border-radius: 34px;
+	padding: 26px;
+	background-color: white;
+	transition: background-color .3s ease;
+
+	input {
+		position: absolute;
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	&__media {
+		display: block;
+		border-radius: 14px;
+		overflow: hidden;
+		aspect-ratio: 1 / 1;
+		border: 2px solid transparent;
+		transition: border-color .2s ease;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			display: block;
+		}
+	}
+
+	&__label {
+		font-weight: 600;
+		font-size: 25px;
+		line-height: 100%;
+		letter-spacing: -0.01em;
+		color: #1c1c1c;
+		transition: color .3s ease;
+	}
+
+	&--active,
+	&:has(input:checked) {
+		background-color: $red;
+	}
+
+	&--active &__label,
+	&:has(input:checked) &__label {
+		color: white;
+	}
+}
 
 @import 'modalbox-open-day/_style';

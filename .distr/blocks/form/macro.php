@@ -1,6 +1,7 @@
 {% macro form(
 form_id,
-action='<?= $action ?>',
+action='
+<?= $action ?>',
 form_class='',
 title='',
 title_class='',
@@ -21,11 +22,7 @@ select
 	<input type="hidden" name="form" value="{{ form_id | safe }}">
 
 	{% if title %}
-	<div class="form__title {{ title_class }}">{{ title | safe }}</div>
-	{% endif %}
-
-	{% if txt %}
-	<div class="form__txt">{{ txt | safe }}</div>
+	<div class="form__title {{ title_class }}" data-title>{{ title | safe }}</div>
 	{% endif %}
 
 	<div class="form__items">
@@ -70,7 +67,7 @@ select
 			{% if button %}
 			{{ button | safe }}
 			{% else %}
-			<button type="submit" class="button shadow arrowDecor {{ button_class }}">{{ button_txt }}</button>
+			<button type="submit" class="button shadow arrowDecor {{ button_class }}"><span data-submit-text>{{ button_txt }}</span></button>
 			{% endif %}
 		</div>
 	</div>
@@ -81,7 +78,8 @@ select
 				<input type="checkbox" name="personalDataAgree" checked>
 				<div class="form__footer-checkbox-icon icon-checkbox"></div>
 			</div>
-			<div class="form__footer-txt">Даю согласие на&nbsp;обработку персональных данных и&nbsp;соглашаюсь <nobr>с&nbsp;<a href="<?= $block['privacy-link'] ?>" target="_blank" class="link-unhover">политикой конфиденциальности</a></nobr></div>
+			<div class="form__footer-txt">Даю согласие на&nbsp;обработку персональных данных и&nbsp;соглашаюсь <nobr>с&nbsp;<a href="<?= $block['privacy-link'] ?>" target="_blank" class="link-unhover">политикой конфиденциальности</a></nobr>
+			</div>
 		</label>
 	</div>
 
@@ -110,11 +108,23 @@ select
 		{% endfor %}
 	</select>
 
+	{% elseif item.type == 'radio-group' %}
+
+	<span class="form__radio-label">{{ item.placeholder | safe }}</span>
+	<div class="form__radio-group">
+		{% for option in item.options %}
+		<label class="form__radio-option">
+			<input type="radio" name="{{ item.name }}" value="{{ option.value | safe }}" {{ 'required' if item.required }} {{ 'checked' if loop.first }}>
+			<span>{{ option.text }}</span>
+		</label>
+		{% endfor %}
+	</div>
+
 	{% else %}
 
 	{% if item.type == 'number' %}<label class="form__item-label"><span class="form__item-label-text">{{ item.placeholder | safe }}</span>{% endif %}
-		<input name="{{ item.name }}" type="{{ item.type }}" placeholder="{{ item.placeholder | striptags | safe }}" value="{{ item.value | safe }}" class="form__input" {{ 'min=1' if item.type == 'number' }} {{ 'required' if item.required }} {{ item.attr | safe }}>
-	{% if item.type == 'number' %}</label>{% endif %}
+		<input name="{{ item.name }}" type="{{ item.type }}" placeholder="{{ item.placeholder | striptags | safe }}" value="{{ item.value | safe }}" class="form__input" {{ 'min=1' if item.type=='number' }} {{ 'required' if item.required }} {{ item.attr | safe }}>
+		{% if item.type == 'number' %}</label>{% endif %}
 
 	{% endif %}
 </div>

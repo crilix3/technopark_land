@@ -1,5 +1,10 @@
 .places {
-
+  position: relative;
+  margin-top: 80px;
+  .circle-mobile {
+    top: 15%;
+    left: -30%;
+  }
   &__title {
     font-size: 32px;
     margin-bottom: 16px;

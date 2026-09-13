@@ -68,7 +68,6 @@
 
 			&__img {
 				height: 210px;
-				// background-image: url('../img/modal/thanks-mb.jpg');
 				border-radius: 12px 12px 0 0;
 			}
 
@@ -90,6 +89,59 @@
 		}
 	}
 
+}
+
+.event-picker {
+	&__title {
+		font-size: 24px;
+		line-height: 1.2;
+		letter-spacing: -0.02em;
+		margin-bottom: 20px;
+	}
+
+	&__cards {
+		flex-direction: column;
+		gap: 10px;
+		margin-bottom: 20px;
+	}
+
+	&__next {
+		margin-left: 0;
+		width: 100%;
+		padding: 16px 20px;
+		height: 56px;
+		font-size: 16px;
+
+		&::after {
+			width: 40px;
+			height: 40px;
+			right: 10px;
+			top: 50%;
+		}
+	}
+}
+
+.event-card {
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 12px;
+	flex: none;
+	border-radius: 18px;
+	padding: 12px;
+
+	&__media {
+		width: 64px;
+		height: 64px;
+		flex-shrink: 0;
+		border-radius: 12px;
+	}
+
+	&__label {
+		font-size: 16px;
+		line-height: 1.2;
+		text-align: left;
+	}
 }
 
 

@@ -1,0 +1,19 @@
+.header {
+  // padding: 0;
+  padding-top: 18px !important;
+  width: 100%;
+  position: relative;
+  &__content {
+    &-goBack {
+      &_block {
+        width: 30px;
+        height: 30px;
+        background-color: $red;
+        border-radius: 50%;
+      }
+    }
+    &-logo_img {
+        height: 23px;
+    }
+  }
+}

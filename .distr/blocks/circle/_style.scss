@@ -1,0 +1,21 @@
+#circle {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  box-shadow: 0 0 15px 15px ;
+  background: radial-gradient(circle at 30% 30%, #ffbcbc, #ff0008);
+  filter: blur(150px);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition:
+    width 0.2s,
+    height 0.2s,
+    background 0.3s;
+  z-index: 1;
+}
+#circle.clicked {
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle at 30% 30%, #ff6b6b, #c0392b);
+}

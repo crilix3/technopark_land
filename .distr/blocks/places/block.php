@@ -2,10 +2,11 @@
 {% from './data.php' import data %}
 
 <section class="places" id="places">
+	{% include 'circle-mobile/block.php' %}
 	<div class="places__content">
 
-		<h2 class="places__title">Не просто аудитории.<br><span>Пространство,где создают музыку</span></h2>
-		<p class="places__txt">Современные студии, профессиональное оборудование и атмосфера, в которую хочется возвращаться снова</p>
+		<h2 class="places__title">инфраструктура</h2>
+		<p class="places__txt">Мы разместили новый кампус в самом престижном районе Южного округа,<br/>который с трёх сторон огибается Москвой-рекой.</p>
 
 
 		<div class="places__slider swiper ">
@@ -29,6 +30,7 @@
 				<div class="places__nav-buttons-next swiper-button-next"></div>
 			</div>
 		</div>
+		<p class="places__txt">Мы предоставляем студентам Школы комфортные аудитории<br/>и современное пространство для жизни и творчества</p>
 
 	</div>
 </section>

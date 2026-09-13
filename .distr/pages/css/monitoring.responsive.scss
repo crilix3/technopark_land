@@ -1,0 +1,8 @@
+@import './common.responsive';
+
+// Common
+@import 'common/_common';
+
+// Blocks
+@import '@monitoring/header/_responsive';
+@import '@monitoring/monitoring/_responsive';

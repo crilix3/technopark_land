@@ -1,24 +1,30 @@
 .final-cta {
-	&__title {
-		font-size: 18px;
-		margin-bottom: 12px;
+  &__title {
+    font-size: 18px;
+    margin-bottom: 12px;
 
-		br {
-			display: none;
-		}
-	}
+    br {
+      display: none;
+    }
+  }
 
-	&__button {
-		width: 100%;
-		font-size: 16px;
-		padding: 16px 20px;
-		border-radius: 100px;
-		text-align: left;
+  &__button {
+    width: 100%;
+    font-size: 16px;
+    padding: 16px 20px;
+    border-radius: 100px;
+    text-align: left;
 
-		&::before {
-			width: 30px;
-			height: 30px;
-			right: 10px;
-		}
-	}
+    &::before {
+      width: 30px;
+      height: 30px;
+      right: 10px;
+    }
+  }
+  .d-mobile {
+    display: block;
+  }
+  .d-desktop {
+    display: none;
+  }
 }

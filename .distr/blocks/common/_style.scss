@@ -1,16 +1,17 @@
-@import 'public/css/icons.scss';
+@import "public/css/icons.scss";
 
-@import '_variables-css';
-@import 'fonts/_style';
-@import 'lazy/_style';
+@import "_variables-css";
+@import "fonts/_style";
+@import "lazy/_style";
 
 // Defaults
-@import '_reset';
+@import "_reset";
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
 }
-
 
 textarea,
 select,
@@ -30,7 +31,6 @@ a {
   display: block;
   text-decoration: none;
 }
-
 
 [href^="tel:"] {
   white-space: nowrap;
@@ -54,7 +54,10 @@ b {
   font-weight: 550;
 }
 
-button, input, select, textarea {
+button,
+input,
+select,
+textarea {
   font-family: inherit;
 }
 
@@ -96,9 +99,9 @@ label.error {
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: #ED1319 black;
+  scrollbar-color: #ed1319 black;
 }
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: calc(4 * 1px);
 }
 ::-webkit-scrollbar-track {
@@ -108,8 +111,12 @@ label.error {
   background-color: var(--red);
 }
 
-div { box-sizing: border-box }
-br  { line-height: 0 }
+div {
+  box-sizing: border-box;
+}
+br {
+  line-height: 0;
+}
 
 img {
   height: auto;
@@ -123,7 +130,9 @@ ul {
   outline: none !important;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   margin: 0;
 }
 
@@ -138,14 +147,14 @@ h1, h2, h3 {
 }
 
 ::-webkit-scrollbar-track {
-  background: #AEB2B6;
+  background: #aeb2b6;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #C49267;
+  background: #c49267;
 
   &:hover {
-    background: #E85042;
+    background: #e85042;
   }
 }
 
@@ -159,20 +168,24 @@ h1, h2, h3 {
   display: none !important;
 }
 
-
 // Form -----------------
 
 .form {
-
-  label.error{ display:none!important }
+  label.error {
+    display: none !important;
+  }
 
   input.error {
     box-shadow: 0 0 5px 0 #f91c1c9e;
-    &::placeholder { color: inherit }
+    &::placeholder {
+      color: inherit;
+    }
   }
 }
 
-input[type="search"]::-webkit-search-cancel-button {-webkit-appearance: none }
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
 
 // Layout ================
 
@@ -191,7 +204,7 @@ body {
   //max-width: 1920px;
   position: relative;
   //box-shadow: 4px 4px 15px 0 #d5d5d5;
-  transition: all .5s ease;
+  transition: all 0.5s ease;
   margin: 0 auto;
   z-index: 1;
 
@@ -200,12 +213,12 @@ body {
     overflow-y: hidden;
 
     &::before {
-      content: '';
+      content: "";
       position: fixed;
       left: 0;
       width: 100%;
       height: 100vh;
-      background: rgba(0,0,0,0.6);
+      background: rgba(0, 0, 0, 0.6);
       z-index: 50;
     }
   }
@@ -217,7 +230,9 @@ body {
   background: white;
   z-index: 9999;
   transition: opacity 0.6s ease;
-  &.hidden { opacity: 0 }
+  &.hidden {
+    opacity: 0;
+  }
 }
 
 .wrapper {
@@ -261,11 +276,11 @@ section {
 // Title ------------------
 
 .title {
-  color: #0A0A0A;
+  color: #0a0a0a;
   font-size: 72px;
   font-weight: 300;
   line-height: 0.96;
-  letter-spacing: -.02em;
+  letter-spacing: -0.02em;
   text-transform: uppercase;
   display: flex;
   align-items: center;
@@ -274,9 +289,9 @@ section {
   margin-bottom: 40px;
 
   &:after {
-    content: '';
+    content: "";
     position: absolute;
-    background: #0A0A0A;
+    background: #0a0a0a;
     width: 100%;
     height: 2px;
     left: 0;
@@ -296,7 +311,6 @@ section {
   }
 }
 
-
 // Swiper ----------------
 
 .swiper {
@@ -309,7 +323,8 @@ section {
 // Swiper-buttons --------
 
 .swiper-button {
-  background: url('../img/common/slider-arrows-bg.png') no-repeat 50% 50% / 100% 100%;
+  background: url("../img/common/slider-arrows-bg.png") no-repeat 50% 50% / 100%
+    100%;
   display: flex;
   justify-content: space-between;
   width: 126px !important;
@@ -321,7 +336,8 @@ section {
   &-next,
   &-prev {
     position: static;
-    background: rgba(224, 224, 224, 0.7) url('../img/common/icon-arrow-swiper.svg') no-repeat 50% 50% / 30px 30px;
+    background: rgba(224, 224, 224, 0.5)
+      url("../img/common/icon-arrow-swiper.svg") no-repeat 50% 50% / 30px 30px;
     top: 0 !important;
     width: 56px;
     height: 56px;
@@ -329,25 +345,71 @@ section {
     pointer-events: initial;
     margin: initial;
     transition: 0.3s;
-
-    &::after,
-    &::before {
-      content: '';
-    }
-
-    &:hover {
-      background-color: rgba(126, 127, 129, 0.5);
-    }
   }
 
+  &-next {
+    &::after {
+      content: "";
+    }
+
+    &::before {
+      content: "";
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      border: 2px solid $red;
+      transform: rotate(-45deg);
+      border-right: 2px solid rgba(224, 224, 224, 0.5);
+      overflow: hidden;
+      opacity: 0;
+      transition: 0.3s;
+    }
+  }
 
   &-prev {
     transform: rotate(180deg);
+    &::after {
+      content: "";
+    }
+
+    &::before {
+      content: "";
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      border: 2px solid $red;
+      transform: rotate(45deg);
+      border-right: 2px solid rgba(224, 224, 224, 0.5);
+      overflow: hidden;
+      opacity: 0;
+      transition: 0.3s;
+    }
+  }
+
+  &-next {
+    &:hover {
+      &::before {
+        opacity: 1;
+        overflow: visible;
+        transition: 0.3s;
+      }
+    }
+  }
+
+  &-prev {
+    &:hover {
+      &::before {
+        opacity: 1;
+        overflow: visible;
+        transition: 0.3s;
+      }
+    }
   }
 
   &-disabled {
-    background: #E0E1E5 url('../img/common/icon-slider-arrow.svg') no-repeat center / auto;
-    opacity: .5 !important;
+    background: #e0e1e5 url("../img/common/icon-slider-arrow.svg") no-repeat
+      center / auto;
+    opacity: 0.5 !important;
   }
 }
 
@@ -355,14 +417,14 @@ section {
 
 .swiper-scrollbar {
   position: relative !important;
-  background: #E0E1E5;
+  background: #e0e1e5;
   height: 5px;
   left: 0 !important;
   width: 100% !important;
   margin-top: 40px;
 
   &-drag {
-    background: #CECECE;
+    background: #cecece;
   }
 }
 
@@ -377,11 +439,11 @@ section {
   margin-top: 10px;
 
   &-bullet {
-    background: #BBBBBB;
+    background: #bbbbbb;
     width: 140px;
     height: 6px;
     border-radius: 999px;
-    transition: all .2s ease;
+    transition: all 0.2s ease;
     margin: 0 !important;
     opacity: 1 !important;
 
@@ -394,4 +456,4 @@ section {
 /***********/
 /* Common */
 
-@import '_utils.style';
+@import "_utils.style";

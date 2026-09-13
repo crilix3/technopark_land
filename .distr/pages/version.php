@@ -47,14 +47,21 @@ $block['footer__legal-synergydigital'] = true;
 $h1 = '';
 $h2 = '';
 
+/* Pages */
+$block['global_studio-monitoring'] = "/monitoring";
+$block['global_studio-microphones'] = "/microphones";
+$block['global_studio-audio_core'] = "/audio-core";
+$block['global_studio-soft'] = "/soft";
+$block['global_studio-analog'] = "/analog";
+
 /* Versions */
 switch ($version) {
 	case 'basta_trial_kids':
 		$land = 'basta_trial_kids';
-	break;
+		break;
 	case 'trial_lesson_two':
 		$land = 'trial_lesson_two';
-	break;
+		break;
 }
 
 /* Postprocess */
@@ -63,13 +70,21 @@ $block['phone-2-link'] = get_phone_link($block['phone-2']);
 $block['email-link'] = get_email_link($block['email']);
 
 $action = implode(array(
-	'&unit=', $unit,
-	'&type=', $type,
-	'&land=', $land,
-	'&lang=', $lang,
-	'&version=', $version,
-	'&partner=', $partner,
-	'&quote_id=', $quote_id,
-	'&redirect=', urlencode($redirect),
+	'&unit=',
+	$unit,
+	'&type=',
+	$type,
+	'&land=',
+	$land,
+	'&lang=',
+	$lang,
+	'&version=',
+	$version,
+	'&partner=',
+	$partner,
+	'&quote_id=',
+	$quote_id,
+	'&redirect=',
+	urlencode($redirect),
 	'&ignore-thanksall=1'
 ));

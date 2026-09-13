@@ -5,10 +5,31 @@
 		<div class="modalbox__window" role="modal" aria-modal="true">
 			<button data-modalboxClose class="modalbox__close"></button>
 			<div class="modalbox__form">
-				{{ form.form ( form_id = 'modalbox', form_class = 'form_vertical', title
-				= 'Остались вопросы? Оставьте заявку <br />
-				и&nbsp;получите консультацию', button_txt = 'Оставить заявку',
-				exclude_fields = { question: true, email: true } )}}
+				{% set ticket_fields = [
+				{
+				name: 'comments[Способ связи]',
+				type: 'radio-group',
+				placeholder: 'Выберите способ связи',
+				options: [
+				{ value: 'Звонок', text: 'Звонок' },
+				{ value: 'WA/TG/Max и т.д.', text: 'WA/TG/Max и т.д.' }
+				]
+				},
+				{
+				name: 'comments[Источник]',
+				type: 'hidden',
+				value: 'Скидка'
+				}
+				] %}
+
+				{{ form.form(
+				form_id = 'modalbox-ticket',
+				form_class = 'form_vertical',
+				title = 'Запишитесь на экскурсиюпо кампусу',
+				button_txt = 'Получить скидку',
+				exclude_fields = { question: true, email: true },
+				add_fields = ticket_fields
+				)}}
 			</div>
 		</div>
 	</div>
@@ -20,9 +41,31 @@
 			<button data-modalboxClose class="modalbox__close"></button>
 			<div class="feedback__content">
 				<div class="feedback__form">
-					{{ form.form ( form_id = 'modalbox-partner', form_class =
-					'form_vertical', title = 'Стать партнером', button_txt = 'Оставить
-					заявку', exclude_fields = { question: true, email: true } )}}
+					{% set ticket_fields = [
+				{
+				name: 'comments[Способ связи]',
+				type: 'radio-group',
+				placeholder: 'Выберите способ связи',
+				options: [
+				{ value: 'Звонок', text: 'Звонок' },
+				{ value: 'WA/TG/Max и т.д.', text: 'WA/TG/Max и т.д.' }
+				]
+				},
+				{
+				name: 'comments[Источник]',
+				type: 'hidden',
+				value: 'Скидка'
+				}
+				] %}
+
+				{{ form.form(
+				form_id = 'modalbox-ticket',
+				form_class = 'form_vertical',
+				title = 'Запишитесь на экскурсиюпо кампусу',
+				button_txt = 'Получить скидку',
+				exclude_fields = { question: true, email: true },
+				add_fields = ticket_fields
+				)}}
 				</div>
 			</div>
 		</div>

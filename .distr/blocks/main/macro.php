@@ -12,12 +12,18 @@
 						<div class="main__slide-title">
 							<div class="main__slide-content d-desktop">
 								<img class="d-mobile" src="{{ item.image_m | safe }}" alt="">
-								<span class="main__slide-pretitle">Начни с пробного занятия</span>
-								<h1 class="main__slide-heading">Учись у тех, кто задаёт тренды в музыкальной индустрии</h1>
-								<p class="main__slide-text">Попробуй одно из 20 современных музыкальных направлений под руководством действующих артистов GAZ и преподавателей школы БАСТА × СИНЕРГИЯ</p>
-								<div class="main__slide-buttons">
-									<button class="main__slide-button main__slide-button_primary" data-modal-button="modalbox" type="button"><span>Попробовать бесплатно</span></button>
-									<a href="#programs" class="main__slide-button main__slide-button_secondary scroll"><span>Смотреть направления</span></a>
+								<div class="main__slide-text">
+									<div class="main__slide-text_content">
+										<div class="main__slide-fullText">
+											<span class="main__slide-pretitle">Твой путь<br />в индустрию</span>
+											<h1 class="main__slide-heading">Начинается здесь</h1>
+										</div>
+										<p class="main__slide-subtitle">Новый кампус Школы современной музыки <br /> БАСТА х СИНЕРГИЯ: учись и создавай<br />на профессиональном уровне</p>
+									</div>
+									<div class="main__slide-buttons">
+										<button class="main__slide-button main__slide-button_primary btn-desktop" data-modal-button="modalbox" type="button"><span>Записаться на экскурсию по кампусу</span></button>
+										<button class="main__slide-button main__slide-button_primary d-mobile" data-modal-button="modalbox" type="button"><span>Записаться на экскурсию</span></button>
+									</div>
 								</div>
 							</div> <!-- main__slide-content -->
 						</div>

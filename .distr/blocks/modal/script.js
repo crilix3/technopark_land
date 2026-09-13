@@ -28,9 +28,13 @@ class ModalBox {
 		this.events()
 	}
 
-	open(modalBox) {
+	open(modalBox, triggerButton = null) {
 
 		this.config.beforeShow?.(modalBox)
+
+		if (triggerButton) {
+			this.fillModalContent(modalBox, triggerButton)
+		}
 
 		let header = document.querySelector('#header')
 		header.style.zIndex = '50'
@@ -42,6 +46,31 @@ class ModalBox {
 		this.isOpened = true
 
 		this.config.afterShow?.(modalBox)
+	}
+
+	fillModalContent(modalBox, triggerButton) {
+
+		const contentAttr = triggerButton.getAttribute('data-modal-content')
+
+		if (!contentAttr) return
+
+		let content = {}
+
+		try {
+			content = JSON.parse(contentAttr)
+		} catch (err) {
+			console.warn('Не удалось распарсить data-modal-content:', err)
+			return
+		}
+
+		const titleEl = modalBox.querySelector('[data-title]')
+		const submitEl = modalBox.querySelector('[data-submit-text]')
+		const sourceInput = modalBox.querySelector('input[name="comments[Источник]"]')
+
+		if (titleEl && content.title) titleEl.innerHTML = content.title
+		if (submitEl && content.submitText) submitEl.innerHTML = content.submitText
+		if (sourceInput) sourceInput.setAttribute('value', content.source || '')
+
 	}
 
 	close(modalBox) {
@@ -85,14 +114,19 @@ class ModalBox {
 
 				const targetModalBox = document.querySelector(`[data-modal="${button.getAttribute(this.config.buttonsSelector)}"]`)
 
+				if (!targetModalBox) {
+					console.warn('Модалка не найдена:', button.getAttribute(this.config.buttonsSelector))
+					return
+				}
+
 				const iframe = targetModalBox.querySelector('iframe') ?? null
 				const pdfUrl = iframe ? iframe.getAttribute('src') : null
 				const isMobile = window.innerWidth < 1280
 
-				if (isMobile && pdfUrl) { // if PDF Iframe
+				if (isMobile && pdfUrl) {
 					window.open(pdfUrl, '_blank')
 				} else {
-					this.open(targetModalBox)
+					this.open(targetModalBox, button)
 				}
 
 				return
@@ -143,5 +177,46 @@ window.myModalBox = new ModalBox({
 	}
 })
 
+
 // myModalBox.open(document.querySelector('[data-modal="modalbox"]'))
+
+initEventPicker()
+
+function initEventPicker() {
+	document.querySelectorAll('.event-picker').forEach(picker => {
+		const cards = picker.querySelectorAll('.event-card')
+		const nextButton = picker.querySelector('.event-picker__next')
+
+		cards.forEach(card => {
+			const input = card.querySelector('input[type="radio"]')
+
+			card.addEventListener('click', () => {
+				cards.forEach(c => c.classList.remove('event-card--active'))
+				card.classList.add('event-card--active')
+				input.checked = true
+				nextButton.disabled = false
+			})
+		})
+
+		nextButton.addEventListener('click', () => {
+			const selected = picker.querySelector('input[type="radio"]:checked')
+			if (!selected) return
+
+			const currentModal = nextButton.closest('[data-modal]')
+			const targetModalId = nextButton.getAttribute('data-next-modal')
+			const targetModal = document.querySelector(`[data-modal="${targetModalId}"]`)
+
+			if (!targetModal) {
+				console.warn('Целевая модалка не найдена:', targetModalId)
+				return
+			}
+
+			const hiddenField = targetModal.querySelector('input[name="comments[Мероприятие]"]')
+			if (hiddenField) hiddenField.setAttribute('value', selected.value)
+
+			window.myModalBox.close(currentModal)
+			window.myModalBox.open(targetModal)
+		})
+	})
+}
 
