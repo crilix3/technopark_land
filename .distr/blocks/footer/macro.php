@@ -6,13 +6,12 @@
 			<img class="footer__nav-logo lazy" data-src="img/footer/logo.svg" alt="logo">
 			<nav>
 				<ul>
-					<li><a href="#directions" class="scroll">Направления</a></li>
-					<li><a href="#lesson-slider" class="scroll">Что будет на занятии</a></li>
-					<li><a href="#places" class="scroll">Кампус</a></li>
-					<li><a href="#outcomes" class="scroll">Что дальше ?</a></li>
-					<li><a href="#faq" class="scroll">FAQ</a></li>
+					<li><a href="#campus" class="scroll">О кампусе</a></li>
+					<li><a href="#global-studio" class="scroll">Студия</a></li>
+					<li><a href="#places" class="scroll">Локация</a></li>
+					<li><a href="#author-intro" class="scroll">Баста о школе</a></li>
 					<li>
-						<button class="footer__nav-button button button_red arrowDecor" data-modal-button="modalbox" type="button">Подобрать программу</button>
+						<button class="footer__nav-button button button_red arrowDecor" data-modal-button="modalbox" type="button">Записаться на экскурсию</button>
 					</li>
 				</ul>
 			</nav>
@@ -24,9 +23,22 @@
 					<div class="footer__info-title">Контакты Школы современной музыки</div>
 				<?php } ?>
 				<div class="footer__info-content">
+					<?php if ( $block['footer__info-address'] ) { ?>
+						<div class="footer__info-address">
+							<h3>Адреса приемных комиссий</h3>
+							<div class="footer__info-address-txt"><span>Сокол</span> Ленинградский проспект, 80Г</div>
+							<div class="footer__info-address-txt"><span>Семеновская</span> Улица Измайловский Вал, 2</div>
+							<div class="footer__info-address-txt"><span>Охотный ряд</span> Улица Тверская, 4</div>
+						</div>
+					<?php } ?>
+					<div class="footer__info-address">
+						<h3>Адрес кампуса</h3>
+						<div class="footer__info-address-txt"><span>Технопарк</span> <p>Южный речной вокзал</p></div>
+						<p class="no-icon">пр-кт Андропова, 11 к7</p>
+					</div>
 					<div class="footer__info-schedule">
 						<h3>График работы</h3>
-						<div><span>Пн. &mdash;&nbsp;вс.</span>&nbsp;09:00&nbsp;&mdash; 20:00</div>
+						<div><span>Пн. &mdash;&nbsp;вс.</span>&nbsp;09:00&nbsp;&mdash; 21:00</div>
 					</div>
 					<?php if ( $block['footer__info-phones'] ) { ?>
 						<div class="footer__info-phones">
@@ -47,10 +59,10 @@
 			<div class="footer__feedback">
 				<button class="footer__feedback-button button" data-modal-button="modalbox" type="button">Обратная связь</button>
 				<?php if ( $block['vk-link'] ) { ?>
-					<a href="<?= $block['vk-link'] ?>" target="_blank"><img data-src="img/footer/icon-vk.svg" alt="icon-vk" class="footer__feedback-icon-vk lazy"></a>
+					<a href="<?= $block['vk-link'] ?>" target="_blank"><img src="img/footer/icon-vk.svg" alt="icon-vk" class="footer__feedback-icon-vk"></a>
 				<?php } ?>
 				<?php if ( $block['tg-link'] ) { ?>
-					<a href="<?= $block['tg-link'] ?>" target="_blank"><img data-src="img/footer/icon-tg.svg" alt="icon-tg" class="footer__feedback-icon-tg lazy"></a>
+					<a href="<?= $block['tg-link'] ?>" target="_blank"><img src="img/footer/icon-tg.svg" alt="icon-tg" class="footer__feedback-icon-tg"></a>
 				<?php } ?>
 			</div>
 		</div>
