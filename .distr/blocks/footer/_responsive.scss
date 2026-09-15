@@ -1,6 +1,6 @@
 .footer {
   &__nav {
-    flex-direction: column;
+    flex-direction: row;
     align-items: initial;
     gap: 16px;
     padding: 12px 0;
@@ -95,6 +95,7 @@
 
     &-address {
       font-size: 12px;
+      display: none;
 
       &-txt {
         line-height: 130%;
@@ -195,7 +196,8 @@
 
     &-content {
       flex-direction: column;
-      gap: 20px;
+      gap: 12px;
+      font-size: 12px;
 
       > div {
         display: flex;
@@ -205,7 +207,7 @@
 
     &-design,
     &-synergyDigital {
-      flex-direction: column;
+      flex-direction: row;
       align-items: flex-start;
 
       a {

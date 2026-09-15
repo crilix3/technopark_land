@@ -17,13 +17,13 @@
       font-size: 16px;
       font-weight: 500;
       line-height: 1;
-      width: 235px;
+      // width: 235px;
       min-height: 40px;
-      padding: 0 8px 0 16px;
+      padding: 12px 46px 12px 16px;
 
       
 
-      &.button.arrowDecor::before {
+      &.button.arrowDecor::after {
         width: 26px;
         height: 26px;
         right: 8px;

@@ -57,21 +57,19 @@
 			</div>
 
 			<div class="footer__feedback">
-				<button class="footer__feedback-button button" data-modal-button="modalbox" type="button">Обратная связь</button>
 				<?php if ( $block['vk-link'] ) { ?>
 					<a href="<?= $block['vk-link'] ?>" target="_blank"><img src="img/footer/icon-vk.svg" alt="icon-vk" class="footer__feedback-icon-vk"></a>
 				<?php } ?>
 				<?php if ( $block['tg-link'] ) { ?>
 					<a href="<?= $block['tg-link'] ?>" target="_blank"><img src="img/footer/icon-tg.svg" alt="icon-tg" class="footer__feedback-icon-tg"></a>
 				<?php } ?>
+				<button class="footer__feedback-button button" data-modal-button="modalbox" type="button">Обратная связь</button>
+				
 			</div>
 		</div>
 
 		<div class="footer__legal">
 			<div class="footer__legal-content">
-				<?php if ( $block['license-link'] ) { ?>
-					<div class="footer__legal-license"><a class="link-unhover" href="https://sys3.ru/zielseiten/shkolabasty.rf/license.pdf" target="_blank">Лицензия</a></div>
-				<?php } ?>
 				<div class="footer__legal-policy"><a class="link-unhover" href="<?= $block['privacy-link'] ?>" target="_blank">Политика конфиденциальности</a></div>
 			</div><!-- footer__legal-content -->
 			<div class="footer__legal-content">
@@ -79,13 +77,13 @@
 				<?php if ( $block['footer__legal-design'] ) { ?>
 					<div class="footer__legal-design">
 						<span>Дизайн разработан «Синергия Креатив»</span>
-						{#<a href="#">Подробнее</a>#}
+						<a href="http://sydi.ru" target="_blank" rel="_nofollow">Подробнее</a>
 					</div><!-- footer__legal-design -->
 				<?php } ?>
 				<?php if ( $block['footer__legal-synergydigital'] ) { ?>
 					<div class="footer__legal-synergydigital">
 						<span>Данный сайт принадлежит и&nbsp;управляется независимым рекламным агентством ООО &laquo;Синергия Диджитал&raquo;.</span>
-						<a href="http://sydi.ru" target="_blank" rel="_nofollow">Подробнее</a>
+						
 					</div><!-- footer__legal-synergydigital -->
 				<?php } ?>
 			</div><!-- footer__legal-content -->
