@@ -227,7 +227,7 @@ function onTouchEnd() {
 
         element.addEventListener("mouseleave", function () {
           textBlock.style.opacity = "0";
-          textBlock.style.transform = `translate(20px) scaleX(-1) rotateZ(-${cfg.rotateZ}deg)`;
+          textBlock.style.transform = `translateY(20px) scaleX(-1) rotateZ(-${cfg.rotateZ}deg)`;
         });
       }
     });

@@ -21,7 +21,9 @@
       min-height: 40px;
       padding: 0 8px 0 16px;
 
-      &.button.arrowDecor::after {
+      
+
+      &.button.arrowDecor::before {
         width: 26px;
         height: 26px;
         right: 8px;
