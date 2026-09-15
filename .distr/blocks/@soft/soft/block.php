@@ -17,28 +17,28 @@
             <div class="monitoring__content-container">
                 <div class="monitoring__content-preview_grid">
                     <div class="monitoring__content-preview_elem wide-2">
-                        <img class="monitoring__content-preview_img d-dektop" src="img/main/soft-1.png" alt="">
-                        <img class="monitoring__content-preview_img d-mobile" src="img/main/soft-1-mobile.png" alt="">
+                        <img class="monitoring__content-preview_img d-dektop" src="img/main/soft-1.jpg" alt="">
+                        <img class="monitoring__content-preview_img d-mobile" src="img/main/soft-1-mobile.jpg" alt="">
                         <span class="monitoring__content-preview_text">iZotope (RX, Ozone и др.)</span>
                     </div>
                     <div class="monitoring__content-preview_elem wide-3">
-                        <img class="monitoring__content-preview_img d-dektop" src="img/main/soft-4.png" alt="">
-                        <img class="monitoring__content-preview_img d-mobile" src="img/main/soft-4-mobile.png" alt="">
+                        <img class="monitoring__content-preview_img d-dektop" src="img/main/soft-4.jpg" alt="">
+                        <img class="monitoring__content-preview_img d-mobile" src="img/main/soft-4-mobile.jpg" alt="">
                         <span class="monitoring__content-preview_text">Pro Tools Ultimate</span>
                     </div >
                     <div class="monitoring__content-preview_elem">
-                        <img class="monitoring__content-preview_img d-dektop" src="img/main/soft-3.png" alt="">
-                        <img class="monitoring__content-preview_img d-mobile" src="img/main/soft-3-mobile.png" alt="">
+                        <img class="monitoring__content-preview_img d-dektop" src="img/main/soft-3.jpg" alt="">
+                        <img class="monitoring__content-preview_img d-mobile" src="img/main/soft-3-mobile.jpg" alt="">
                         <span class="monitoring__content-preview_text">Ableton Live Suite</span>
                     </div>
                     <div class="monitoring__content-preview_elem">
-                        <img class="monitoring__content-preview_img d-dektop" src="img/main/soft-2.png" alt="">
-                        <img class="monitoring__content-preview_img d-mobile" src="img/main/soft-2-mobile.png" alt="">
+                        <img class="monitoring__content-preview_img d-dektop" src="img/main/soft-2.jpg" alt="">
+                        <img class="monitoring__content-preview_img d-mobile" src="img/main/soft-2-mobile.jpg" alt="">
                         <span class="monitoring__content-preview_text">Native Instruments Komplete Ultimate</span>
                     </div>
                     <div class="monitoring__content-preview_elem wide">
-                        <img class="monitoring__content-preview_img d-dektop" src="img/main/soft-5.png" alt="">
-                        <img class="monitoring__content-preview_img d-mobile" src="img/main/soft-5-mobile.png" alt="">
+                        <img class="monitoring__content-preview_img d-dektop" src="img/main/soft-5.jpg" alt="">
+                        <img class="monitoring__content-preview_img d-mobile" src="img/main/soft-5-mobile.jpg" alt="">
                         <span class="monitoring__content-preview_text">UAD Plug-ins</span>
                     </div>
                 </div>

@@ -17,28 +17,28 @@
             <div class="monitoring__content-container">
                 <div class="monitoring__content-preview_grid">
                     <div class="monitoring__content-preview_elem wide">
-                        <img class="monitoring__content-preview_img" src="img/main/monitor-1.png" alt="">
+                        <img class="monitoring__content-preview_img" src="img/main/monitor-1.jpg" alt="">
                         <span class="monitoring__content-preview_text">GENELEC 8341A — Surround (боковые)</span>
                     </div>
                     <div class="monitoring__content-preview_elem">
-                        <img class="monitoring__content-preview_img" src="img/main/monitor-2.png" alt="">
+                        <img class="monitoring__content-preview_img" src="img/main/monitor-2.jpg" alt="">
                         <span class="monitoring__content-preview_text">GENELEC 1235A — дальнее поле (L/R)</span>
                     </div >
                     <div class="monitoring__content-preview_elem wide-mobile">
-                        <img class="monitoring__content-preview_img d-dektop" src="img/main/monitor-3.1.png" alt="">
-                        <img class="monitoring__content-preview_img d-mobile" src="img/main/monitor-3.png" alt="">
+                        <img class="monitoring__content-preview_img d-dektop" src="img/main/monitor-3.1.jpg" alt="">
+                        <img class="monitoring__content-preview_img d-mobile" src="img/main/monitor-3.jpg" alt="">
                         <span class="monitoring__content-preview_text">GENELEC 8351В — LCR (Dolby Atmos)</span>
                     </div>
                     <div class="monitoring__content-preview_elem ">
-                        <img class="monitoring__content-preview_img" src="img/main/monitor-4.png" alt="">
+                        <img class="monitoring__content-preview_img" src="img/main/monitor-4.jpg" alt="">
                         <span class="monitoring__content-preview_text">AVANTONE Mixcube — референс</span>
                     </div>
                     <div class="monitoring__content-preview_elem ">
-                        <img class="monitoring__content-preview_img" src="img/main/monitor-5.png" alt="">
+                        <img class="monitoring__content-preview_img" src="img/main/monitor-5.jpg" alt="">
                         <span class="monitoring__content-preview_text">GENELEC 7380A — сабвуфер</span>
                     </div>
                     <div class="monitoring__content-preview_elem wide">
-                        <img class="monitoring__content-preview_img" src="img/main/monitor-6.png" alt="">
+                        <img class="monitoring__content-preview_img" src="img/main/monitor-6.jpg" alt="">
                         <span class="monitoring__content-preview_text">GENELEC 8340А — Ceiling (потолочные)</span>
                     </div>
                 </div>

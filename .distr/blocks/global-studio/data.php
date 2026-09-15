@@ -5,31 +5,31 @@
         {
             name: 'МОНИТОРИНГ',
             description: 'Контроль звучания в ближнем,<br/>среднем и дальнем поле:<br/>кристальная чистота в любой<br/>зоне студии',
-            img: 'monitoring.png',
+            img: 'monitoring.jpg',
             linkKey: 'monitoring'
         },
         {
             name: 'МИКРОФОНЫ',
             description: 'Широкий выбор микрофонов<br/>для записи вокала, инструментов<br/>и атмосфер: точное звучание<br/>под любую задачу',
-            img: 'microphones.png',
+            img: 'microphones.jpg',
             linkKey: 'microphones'
         },
         {
             name: 'АУДИО ЯДРО И КОНТРОЛЬ',
             description: 'Профессиональная<br/>маршрутизация, конвертация<br/>и контроль сигнала: безупречная<br/>передача без искажений',
-            img: 'audio-core.png',
+            img: 'audio-core.jpg',
             linkKey: 'audio-core'
         },
         {
             name: 'СОФТ И ПРОДАКШН',
             description: 'Современные инструменты<br/>для продакшна и постпродакшна:<br/>технологии профессионалов<br/>для смелых идей',
-            img: 'soft.png',
+            img: 'soft.jpg',
             linkKey: 'soft'
         },
         {
             name: 'АНАЛОГОВЫЙ ТРАКТ',
             description: 'Премиальные предусилители, эквалайзеры, компрессоры<br/>и сатурация: максимальная выразительность каждого трека',
-            img: 'analog.png',
+            img: 'analog.jpg',
             linkKey: 'analog'
         }
     ]

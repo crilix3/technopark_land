@@ -17,23 +17,23 @@
             <div class="monitoring__content-container">
                 <div class="monitoring__content-preview_grid">
                     <div class="monitoring__content-preview_elem wide">
-                        <img class="monitoring__content-preview_img d-dektop" src="img/main/analog-1.png" alt="">
-                        <img class="monitoring__content-preview_img d-mobile" src="img/main/analog-1-mobile.png" alt="">
+                        <img class="monitoring__content-preview_img d-dektop" src="img/main/analog-1.jpg" alt="">
+                        <img class="monitoring__content-preview_img d-mobile" src="img/main/analog-1-mobile.jpg" alt="">
                         <span class="monitoring__content-preview_text">Rupert Neve Designs (511, 542 и др.)</span>
                     </div>
                     <div class="monitoring__content-preview_elem">
-                        <img class="monitoring__content-preview_img d-dektop" src="img/main/analog-2.png" alt="">
-                        <img class="monitoring__content-preview_img d-mobile" src="img/main/analog-2-mobile.png" alt="">
+                        <img class="monitoring__content-preview_img d-dektop" src="img/main/analog-2.jpg" alt="">
+                        <img class="monitoring__content-preview_img d-mobile" src="img/main/analog-2-mobile.jpg" alt="">
                         <span class="monitoring__content-preview_text">SSL 500 Series (SiX, VHD Preamp, Bus Comp)</span>
                     </div >
                     <div class="monitoring__content-preview_elem">
-                        <img class="monitoring__content-preview_img d-dektop" src="img/main/analog-3.png" alt="">
-                        <img class="monitoring__content-preview_img d-mobile" src="img/main/analog-3-mobile.png" alt="">
+                        <img class="monitoring__content-preview_img d-dektop" src="img/main/analog-3.jpg" alt="">
+                        <img class="monitoring__content-preview_img d-mobile" src="img/main/analog-3-mobile.jpg" alt="">
                         <span class="monitoring__content-preview_text">API 550b EQ</span>
                     </div>
                     <div class="monitoring__content-preview_elem wide">
-                        <img class="monitoring__content-preview_img d-dektop" src="img/main/analog-4.png" alt="">
-                        <img class="monitoring__content-preview_img d-mobile" src="img/main/analog-4-mobile.png" alt="">
+                        <img class="monitoring__content-preview_img d-dektop" src="img/main/analog-4.jpg" alt="">
+                        <img class="monitoring__content-preview_img d-mobile" src="img/main/analog-4-mobile.jpg" alt="">
                         <span class="monitoring__content-preview_text">AEA RPQ</span>
                     </div>
                 </div>

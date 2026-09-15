@@ -17,28 +17,28 @@
             <div class="monitoring__content-container">
                 <div class="monitoring__content-preview_grid">
                     <div class="monitoring__content-preview_elem wide-2">
-                        <img class="monitoring__content-preview_img d-dektop" src="img/main/audio-core-1.png" alt="">
-                        <img class="monitoring__content-preview_img d-mobile" src="img/main/audio-core-1-mobile.png" alt="">
+                        <img class="monitoring__content-preview_img d-dektop" src="img/main/audio-core-1.jpg" alt="">
+                        <img class="monitoring__content-preview_img d-mobile" src="img/main/audio-core-1-mobile.jpg" alt="">
                         <span class="monitoring__content-preview_text">SSL UF8 DAW Controller</span>
                     </div>
                     <div class="monitoring__content-preview_elem wide-3">
-                        <img class="monitoring__content-preview_img d-dektop" src="img/main/audio-core-2.png" alt="">
-                        <img class="monitoring__content-preview_img d-mobile" src="img/main/audio-core-2-mobile.png" alt="">
+                        <img class="monitoring__content-preview_img d-dektop" src="img/main/audio-core-2.jpg" alt="">
+                        <img class="monitoring__content-preview_img d-mobile" src="img/main/audio-core-2-mobile.jpg" alt="">
                         <span class="monitoring__content-preview_text">Universal Audio Apollo x8p</span>
                     </div >
                     <div class="monitoring__content-preview_elem">
-                        <img class="monitoring__content-preview_img d-dektop" src="img/main/audio-core-3.png" alt="">
-                        <img class="monitoring__content-preview_img d-mobile" src="img/main/audio-core-3-mobile.png" alt="">
+                        <img class="monitoring__content-preview_img d-dektop" src="img/main/audio-core-3.jpg" alt="">
+                        <img class="monitoring__content-preview_img d-mobile" src="img/main/audio-core-3-mobile.jpg" alt="">
                         <span class="monitoring__content-preview_text">Universal Audio Apollo x16</span>
                     </div>
                     <div class="monitoring__content-preview_elem">
-                        <img class="monitoring__content-preview_img d-dektop" src="img/main/audio-core-4.png" alt="">
-                        <img class="monitoring__content-preview_img d-mobile" src="img/main/audio-core-4-mobile.png" alt="">
+                        <img class="monitoring__content-preview_img d-dektop" src="img/main/audio-core-4.jpg" alt="">
+                        <img class="monitoring__content-preview_img d-mobile" src="img/main/audio-core-4-mobile.jpg" alt="">
                         <span class="monitoring__content-preview_text">Grace Design m906</span>
                     </div>
                     <div class="monitoring__content-preview_elem wide">
-                        <img class="monitoring__content-preview_img d-dektop" src="img/main/audio-core-5.png" alt="">
-                        <img class="monitoring__content-preview_img d-mobile" src="img/main/audio-core-5-mobile.png" alt="">
+                        <img class="monitoring__content-preview_img d-dektop" src="img/main/audio-core-5.jpg" alt="">
+                        <img class="monitoring__content-preview_img d-mobile" src="img/main/audio-core-5-mobile.jpg" alt="">
                         <span class="monitoring__content-preview_text">SSL UC1 Plug-in Controller</span>
                     </div>
                 </div>

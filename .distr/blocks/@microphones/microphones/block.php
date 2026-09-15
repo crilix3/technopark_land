@@ -17,28 +17,28 @@
             <div class="monitoring__content-container">
                 <div class="monitoring__content-preview_grid">
                     <div class="monitoring__content-preview_elem wide">
-                        <img class="monitoring__content-preview_img" src="img/main/microphones-1.png" alt="">
+                        <img class="monitoring__content-preview_img" src="img/main/microphones-1.jpg" alt="">
                         <span class="monitoring__content-preview_text">Neumann U 87 Ai</span>
                     </div>
                     <div class="monitoring__content-preview_elem">
-                        <img class="monitoring__content-preview_img" src="img/main/microphones-2.png" alt="">
+                        <img class="monitoring__content-preview_img" src="img/main/microphones-2.jpg" alt="">
                         <span class="monitoring__content-preview_text">SOYUZ 017 Tube</span>
                     </div >
                     <div class="monitoring__content-preview_elem wide-mobile">
-                        <img class="monitoring__content-preview_img d-dektop" src="img/main/microphones-5.png" alt="">
-                        <img class="monitoring__content-preview_img d-mobile" src="img/main/microphones-5-mobile.png" alt="">
+                        <img class="monitoring__content-preview_img d-dektop" src="img/main/microphones-5.jpg" alt="">
+                        <img class="monitoring__content-preview_img d-mobile" src="img/main/microphones-5-mobile.jpg" alt="">
                         <span class="monitoring__content-preview_text">Shure SM57 / SM7dB</span>
                     </div>
                     <div class="monitoring__content-preview_elem ">
-                        <img class="monitoring__content-preview_img" src="img/main/microphones-3.png" alt="">
+                        <img class="monitoring__content-preview_img" src="img/main/microphones-3.jpg" alt="">
                         <span class="monitoring__content-preview_text">COLES 4038 (room)</span>
                     </div>
                     <div class="monitoring__content-preview_elem ">
-                        <img class="monitoring__content-preview_img" src="img/main/microphones-4.png" alt="">
+                        <img class="monitoring__content-preview_img" src="img/main/microphones-4.jpg" alt="">
                         <span class="monitoring__content-preview_text">Sennheizer MD421 / MD421-||</span>
                     </div>
                     <div class="monitoring__content-preview_elem wide">
-                        <img class="monitoring__content-preview_img" src="img/main/microphones-6.png" alt="">
+                        <img class="monitoring__content-preview_img" src="img/main/microphones-6.jpg" alt="">
                         <span class="monitoring__content-preview_text">DPA 4018A, Sanken CO-100K и др.</span>
                     </div>
                 </div>

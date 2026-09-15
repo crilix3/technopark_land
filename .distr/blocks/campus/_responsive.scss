@@ -38,6 +38,15 @@
       height: 192px;
     }
 
+    &-element {
+      &:hover {
+        .campus__carousel-text_block {
+          opacity: 1;
+          transform: translateY(-60px) scaleX(-1) rotateZ(-2deg);
+        }
+      }
+    }
+
     &-img_block {
       border-radius: 1.25rem;
     }
@@ -47,6 +56,14 @@
       left: -2.5rem;
       bottom: -0.7rem;
       right: -2.5rem;
+    }
+
+    &-text_block {
+      opacity: 1 !important; 
+      transform: translateY(-60px) scaleX(-1) rotateZ(-2deg);
+      transition:
+        opacity 0.4s ease,
+        transform 0.4s ease;
     }
 
     &-text {
